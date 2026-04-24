@@ -2155,6 +2155,31 @@
 <script>
 
 // ── Demo soru seed (ilk açılışta localStorage boşsa yükle) ──
+
+
+// ═══════════════════════════════════════════════════════
+//  KOLAY YAZILI HAZIRLA — ORTAK UYGULAMA KATMANI
+//  Bu dosya tüm ekranlar tarafından yüklenir.
+// ═══════════════════════════════════════════════════════
+
+// ── Sayfa yolları ──
+// ── Navigasyon yardımcısı ──
+function git(sayfa, params) {
+  if (params) {
+    const q = new URLSearchParams(params).toString();
+    window.location.href = sayfa + '?' + q;
+  } else {
+    window.location.href = sayfa;
+  }
+}
+
+// ── localStorage CRUD ──
+var DB = {
+  get(key)        { try { return JSON.parse(localStorage.getItem('kyw_' + key) || 'null'); } catch { return null; } },
+  set(key, val)   { try { localStorage.setItem('kyw_' + key, JSON.stringify(val)); } catch { alert('Depolama doldu.'); } },
+  del(key)        { localStorage.removeItem('kyw_' + key); },
+};
+
 (function seedDemoSorular() {
   if (DB.get('sorular') && DB.get('sorular').length > 0) return;
   var demo = [
@@ -2183,29 +2208,6 @@
   ];
   DB.set('sorular', demo);
 })();
-
-// ═══════════════════════════════════════════════════════
-//  KOLAY YAZILI HAZIRLA — ORTAK UYGULAMA KATMANI
-//  Bu dosya tüm ekranlar tarafından yüklenir.
-// ═══════════════════════════════════════════════════════
-
-// ── Sayfa yolları ──
-// ── Navigasyon yardımcısı ──
-function git(sayfa, params) {
-  if (params) {
-    const q = new URLSearchParams(params).toString();
-    window.location.href = sayfa + '?' + q;
-  } else {
-    window.location.href = sayfa;
-  }
-}
-
-// ── localStorage CRUD ──
-var DB = {
-  get(key)        { try { return JSON.parse(localStorage.getItem('kyw_' + key) || 'null'); } catch { return null; } },
-  set(key, val)   { try { localStorage.setItem('kyw_' + key, JSON.stringify(val)); } catch { alert('Depolama doldu.'); } },
-  del(key)        { localStorage.removeItem('kyw_' + key); },
-};
 
 // ── Sorular (admin tarafından eklenir, localStorage'da saklanır) ──
 var SoruDB = {
@@ -2426,8 +2428,10 @@ var VIEWS = {};
 var _VMAP = {'giris.html':'giris','ana-sayfa.html':'anaSayfa','senaryo-secimi.html':'senaryo','soru-secimi.html':'sorular','sinav-hazirlama.html':'dizgi','onizleme.html':'onizleme','uyelik.html':'uyelik','odeme.html':'odeme','admin.html':'admin','admin-soru.html':'adminSoru'};
 
 function git(s,p){
+  if(!s) return;
   if(p) Object.keys(p).forEach(function(k){sessionStorage.setItem('param_'+k,p[k]);});
-  goster(_VMAP[s]||s.replace('.html',''));
+  var vid = (_VMAP && _VMAP[s]) ? _VMAP[s] : s.replace('.html','');
+  goster(vid);
 }
 function urlParam(k){return sessionStorage.getItem('param_'+k);}
 
