@@ -1971,6 +1971,185 @@
 </main>
 </div>
 
+
+
+</div>
+
+== -->
+<div id="view-admin" class="view">
+<div style="display:flex;min-height:100vh;background:#0f172a;font-family:'Lexend',sans-serif;color:#e2e8f0;">
+
+  <!-- Sidebar -->
+  <aside style="width:240px;min-height:100vh;background:#1e293b;display:flex;flex-direction:column;padding:0;position:fixed;top:0;left:0;z-index:40;border-right:1px solid rgba(255,255,255,.06);">
+    <div style="padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.06);">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:14px;color:#f1f5f9;">KYH Admin</div>
+          <div style="font-size:10px;color:#64748b;">Yönetici Paneli</div>
+        </div>
+      </div>
+    </div>
+    <nav style="flex:1;padding:12px 10px;display:flex;flex-direction:column;gap:2px;">
+      <button onclick="_adminTab('ozet')" id="atab-ozet" class="atab active-tab" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:none;background:rgba(99,102,241,.2);color:#818cf8;font-size:13px;font-weight:600;cursor:pointer;text-align:left;width:100%">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Genel Bakış
+      </button>
+      <button onclick="_adminTab('sorular')" id="atab-sorular" class="atab" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:none;background:transparent;color:#94a3b8;font-size:13px;font-weight:500;cursor:pointer;text-align:left;width:100%">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Soru Bankası
+      </button>
+      <button onclick="_adminTab('senaryolar')" id="atab-senaryolar" class="atab" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:none;background:transparent;color:#94a3b8;font-size:13px;font-weight:500;cursor:pointer;text-align:left;width:100%">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Senaryolar
+      </button>
+      <button onclick="_adminTab('yeni-soru')" id="atab-yeni-soru" class="atab" style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;border:none;background:transparent;color:#94a3b8;font-size:13px;font-weight:500;cursor:pointer;text-align:left;width:100%">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Yeni Soru Ekle
+      </button>
+    </nav>
+    <div style="padding:14px 10px;border-top:1px solid rgba(255,255,255,.06);">
+      <button onclick="git(PAGES.anaSayfa)" style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:none;background:rgba(239,68,68,.1);color:#f87171;font-size:13px;cursor:pointer;width:100%">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Siteye Dön
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main style="margin-left:240px;flex:1;padding:28px 32px;min-height:100vh;">
+
+    <!-- Genel Bakış -->
+    <div id="admin-ozet" class="admin-panel">
+      <div style="margin-bottom:28px;">
+        <h1 style="font-size:22px;font-weight:700;color:#f1f5f9;margin-bottom:4px;">Genel Bakış</h1>
+        <p style="font-size:13px;color:#64748b;">Sistem durumu ve istatistikler</p>
+      </div>
+      <!-- Stat kartları -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:28px;">
+        <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Toplam Soru</div>
+          <div id="stat-soru" style="font-size:32px;font-weight:700;color:#6366f1;">0</div>
+          <div style="font-size:11px;color:#64748b;margin-top:4px;">localStorage'da kayıtlı</div>
+        </div>
+        <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Senaryo Sayısı</div>
+          <div id="stat-senaryo" style="font-size:32px;font-weight:700;color:#8b5cf6;">0</div>
+          <div style="font-size:11px;color:#64748b;margin-top:4px;">aktif senaryo</div>
+        </div>
+        <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Aktif Sınav</div>
+          <div id="stat-sinav" style="font-size:32px;font-weight:700;color:#10b981;">0</div>
+          <div style="font-size:11px;color:#64748b;margin-top:4px;">seçili soru</div>
+        </div>
+        <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px;">
+          <div style="font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Depolama</div>
+          <div id="stat-depo" style="font-size:32px;font-weight:700;color:#f59e0b;">0</div>
+          <div style="font-size:11px;color:#64748b;margin-top:4px;">KB kullanılıyor</div>
+        </div>
+      </div>
+      <!-- Hızlı işlemler -->
+      <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;margin-bottom:20px;">
+        <h3 style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:16px;">Hızlı İşlemler</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button onclick="_adminTab('yeni-soru')" style="background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.3);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">+ Yeni Soru</button>
+          <button onclick="_adminSeedDemo()" style="background:rgba(16,185,129,.1);color:#34d399;border:1px solid rgba(16,185,129,.2);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Demo Verileri Yükle</button>
+          <button onclick="_adminSifirla()" style="background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Tüm Verileri Sil</button>
+        </div>
+      </div>
+      <!-- Son eklenen sorular -->
+      <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;">
+        <h3 style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:16px;">Son Eklenen Sorular</h3>
+        <div id="admin-son-sorular"></div>
+      </div>
+    </div>
+
+    <!-- Soru Bankası -->
+    <div id="admin-sorular" class="admin-panel" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+        <div>
+          <h1 style="font-size:22px;font-weight:700;color:#f1f5f9;margin-bottom:4px;">Soru Bankası</h1>
+          <p style="font-size:13px;color:#64748b;" id="soru-bank-count">0 soru kayıtlı</p>
+        </div>
+        <button onclick="_adminTab('yeni-soru')" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;">+ Yeni Soru</button>
+      </div>
+      <div id="admin-soru-listesi" style="display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+
+    <!-- Senaryolar -->
+    <div id="admin-senaryolar" class="admin-panel" style="display:none;">
+      <div style="margin-bottom:24px;">
+        <h1 style="font-size:22px;font-weight:700;color:#f1f5f9;margin-bottom:4px;">Senaryolar</h1>
+        <p style="font-size:13px;color:#64748b;">MEB uyumlu sınav senaryoları</p>
+      </div>
+      <div id="admin-senaryo-listesi" style="display:flex;flex-direction:column;gap:12px;"></div>
+    </div>
+
+    <!-- Yeni Soru -->
+    <div id="admin-yeni-soru" class="admin-panel" style="display:none;">
+      <div style="margin-bottom:24px;">
+        <h1 style="font-size:22px;font-weight:700;color:#f1f5f9;margin-bottom:4px;">Yeni Soru Ekle</h1>
+        <p style="font-size:13px;color:#64748b;">Soru bankasına yeni soru ekle</p>
+      </div>
+      <div style="background:#1e293b;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;max-width:680px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div>
+            <label style="font-size:12px;color:#94a3b8;font-weight:600;display:block;margin-bottom:6px;">DERS</label>
+            <select id="admin-ders" style="width:100%;padding:9px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:14px;outline:none;">
+              <option>Matematik</option><option>Türkçe</option><option>Fen Bilimleri</option><option>Sosyal Bilgiler</option><option>İngilizce</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:12px;color:#94a3b8;font-weight:600;display:block;margin-bottom:6px;">KAZANIM KODU</label>
+            <input id="admin-kazanim" type="text" placeholder="Örn: M.9.1.1.1" style="width:100%;padding:9px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:14px;outline:none;"/>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div>
+            <label style="font-size:12px;color:#94a3b8;font-weight:600;display:block;margin-bottom:6px;">SORU TİPİ</label>
+            <select id="admin-tip" onchange="_adminTipDegis()" style="width:100%;padding:9px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:14px;outline:none;">
+              <option value="açık_uçlu">Açık Uçlu</option>
+              <option value="çoktan_seçmeli">Çoktan Seçmeli</option>
+              <option value="boşluk">Boşluk Doldurma</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:12px;color:#94a3b8;font-weight:600;display:block;margin-bottom:6px;">PUAN</label>
+            <input id="admin-puan" type="number" value="10" style="width:100%;padding:9px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:14px;outline:none;"/>
+          </div>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label style="font-size:12px;color:#94a3b8;font-weight:600;display:block;margin-bottom:6px;">SORU METNİ</label>
+          <textarea id="admin-metin" rows="4" placeholder="Soru metnini buraya yazın..." style="width:100%;padding:10px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:14px;outline:none;resize:vertical;"></textarea>
+        </div>
+        <div id="admin-secenekler-alan" style="display:none;margin-bottom:16px;">
+          <label style="font-size:12px;color:#94a3b8;font-weight:600;display:block;margin-bottom:10px;">ŞIKLAR (A-E)</label>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;background:rgba(99,102,241,.2);color:#818cf8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">A</span><input id="sec-a" type="text" placeholder="A şıkkı" style="flex:1;padding:8px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:13px;outline:none;"/></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;background:rgba(99,102,241,.2);color:#818cf8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">B</span><input id="sec-b" type="text" placeholder="B şıkkı" style="flex:1;padding:8px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:13px;outline:none;"/></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;background:rgba(99,102,241,.2);color:#818cf8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">C</span><input id="sec-c" type="text" placeholder="C şıkkı" style="flex:1;padding:8px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:13px;outline:none;"/></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;background:rgba(99,102,241,.2);color:#818cf8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">D</span><input id="sec-d" type="text" placeholder="D şıkkı" style="flex:1;padding:8px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:13px;outline:none;"/></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;background:rgba(99,102,241,.2);color:#818cf8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">E</span><input id="sec-e" type="text" placeholder="E şıkkı (opsiyonel)" style="flex:1;padding:8px 12px;background:#0f172a;border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e2e8f0;font-size:13px;outline:none;"/></div>
+          </div>
+        </div>
+        <button onclick="_adminSoruKaydet()" style="width:100%;padding:12px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:4px;">Soruyu Kaydet</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+<style>
+.admin-panel { display: none; }
+.admin-panel.active { display: block; }
+.atab { transition: background .15s, color .15s; }
+.atab:hover { background: rgba(255,255,255,.05) !important; color: #e2e8f0 !important; }
+.active-tab { background: rgba(99,102,241,.2) !important; color: #818cf8 !important; }
+</style>
+</div>
+
+<!-- ===== V
 <div id="olcum-sandbox" style="position:absolute;top:-9999px;left:-9999px;width:170mm;visibility:hidden;pointer-events:none;"></div>
 
 <script>
@@ -2282,12 +2461,94 @@ function init_onizleme(){var h=document.getElementById('global-header');if(h)h.s
 function init_uyelik(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
 function init_odeme(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
 function init_adminSoru(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
-function init_admin(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
 
-document.addEventListener('DOMContentLoaded', function(){ goster('anaSayfa'); });
+function init_admin() {
+  var h = document.getElementById('global-header');
+  if(h) h.style.display = 'flex';
+  _adminTab('ozet');
+}
 
+function _adminTab(tab) {
+  document.querySelectorAll('#view-admin .atab').forEach(function(btn) {
+    btn.style.background = 'transparent';
+    btn.style.color = '#94a3b8';
+  });
+  var activeBtn = document.getElementById('atab-' + tab);
+  if (activeBtn) {
+    activeBtn.style.background = 'rgba(99,102,241,.2)';
+    activeBtn.style.color = '#818cf8';
+  }
+  document.querySelectorAll('#view-admin .admin-panel').forEach(function(p) {
+    p.style.display = 'none';
+  });
+  var panel = document.getElementById('admin-' + tab);
+  if (panel) panel.style.display = 'block';
+  if (tab === 'ozet') _adminOzetYukle();
+  if (tab === 'sorular') _adminSorularYukle();
+  if (tab === 'senaryolar') _adminSenaryolarYukle();
+}
 
+function _adminOzetYukle() {
+  var sorular = SoruDB.hepsiniGetir();
+  var senaryolar = SenarDB.hepsiniGetir();
+  var el1 = document.getElementById('stat-soru'); if(el1) el1.textContent = sorular.length;
+  var el2 = document.getElementById('stat-senaryo'); if(el2) el2.textContent = senaryolar.length;
+}
 
+function _adminSorularYukle() {
+  var sorular = SoruDB.hepsiniGetir();
+  var listEl = document.getElementById('admin-soru-listesi');
+  if (!listEl) return;
+  if (!sorular.length) {
+    listEl.innerHTML = '<p style="color:#64748b;text-align:center;padding:20px;">Henuz soru yok.</p>';
+    return;
+  }
+  listEl.innerHTML = sorular.map(function(s) {
+    return '<div style="background:#1e293b;border-radius:10px;padding:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">'
+      + '<div><div style="font-size:11px;color:#6366f1;margin-bottom:3px;">' + (s.kazanim||'-') + '</div>'
+      + '<div style="font-size:13px;color:#e2e8f0;">' + (s.metin||'').slice(0,80) + '</div></div>'
+      + '<button onclick="_adminSoruSil(&quot;' + s.id + '&quot;)" style="padding:5px 10px;background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2);border-radius:6px;font-size:12px;cursor:pointer;">Sil</button>'
+      + '</div>';
+  }).join('');
+}
+
+function _adminSenaryolarYukle() {
+  var senaryolar = SenarDB.hepsiniGetir();
+  var listEl = document.getElementById('admin-senaryo-listesi');
+  if (!listEl) return;
+  listEl.innerHTML = senaryolar.map(function(s) {
+    return '<div style="background:#1e293b;border-radius:12px;padding:18px;margin-bottom:10px;">'
+      + '<h3 style="font-size:15px;font-weight:700;color:#f1f5f9;margin-bottom:6px;">' + s.baslik + '</h3>'
+      + '<p style="font-size:12px;color:#64748b;">' + s.ders + ' - ' + s.sinif + '. Sinif</p>'
+      + '</div>';
+  }).join('');
+}
+
+function _adminSoruSil(id) {
+  if (!confirm('Bu soruyu silmek istiyor musunuz?')) return;
+  SoruDB.sil(id);
+  _adminSorularYukle();
+}
+
+function _adminSoruKaydet() {
+  var metin = (document.getElementById('admin-metin')||{}).value||'';
+  if (!metin.trim()) { alert('Soru metni bos olamaz.'); return; }
+  var kaz = (document.getElementById('admin-kazanim')||{}).value||'';
+  var puan = parseInt((document.getElementById('admin-puan')||{}).value)||10;
+  SoruDB.ekle({id:Date.now().toString(),tip:'acik_uclu',puan:puan,kazanim:kaz,senaryoId:null,metin:metin.trim(),secenekler:null,gorsel:null,cevapY:80});
+  alert('Soru kaydedildi!');
+  var ta = document.getElementById('admin-metin'); if(ta) ta.value='';
+  _adminTab('sorular');
+}
+
+function _adminSeedDemo() { window.location.reload(); }
+function _adminSifirla() {
+  if (!confirm('Tum veriler silinecek?')) return;
+  localStorage.removeItem('kyw_sorular');
+  localStorage.removeItem('kyw_aktif_sinav');
+  alert('Silindi.');
+  _adminOzetYukle();
+}
 
 </script>
 </body>
