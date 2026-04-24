@@ -2623,6 +2623,17 @@ document.addEventListener('DOMContentLoaded', function(){
   goster('anaSayfa');
 });
 document.addEventListener('DOMContentLoaded',function(){G('anaSayfa');});
+
+// Event delegation for soru buttons
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('[data-act]');
+  if (!btn) return;
+  var id = btn.getAttribute('data-id');
+  var act = btn.getAttribute('data-act');
+  if (act === 'ekle') sEkle(id);
+  if (act === 'cikar') sCikar(id);
+  if (act === 'asil') { if(confirm('Silinsin mi?')) { SoruDB.sil(id); aSorular(); } }
+});
 </script>
 </body>
 </html>
