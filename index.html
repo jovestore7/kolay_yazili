@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html class="light" lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#805600",
+                    "on-secondary-fixed-variant": "#005320",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#0a0400",
+                    "on-secondary-container": "#00722f",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f7f9ff",
+                    "surface-container-high": "#e5e8ee",
+                    "on-surface": "#181c20",
+                    "primary": "#005bbf",
+                    "tertiary-fixed": "#ffddb0",
+                    "surface-container-low": "#f1f4fa",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#001a41",
+                    "outline": "#727785",
+                    "on-surface-variant": "#414754",
+                    "on-primary-container": "#ffffff",
+                    "surface-container-highest": "#dfe3e8",
+                    "primary-fixed": "#d8e2ff",
+                    "tertiary-container": "#a06d00",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#1a73e8",
+                    "outline-variant": "#c1c6d6",
+                    "surface-dim": "#d7dae0",
+                    "surface-container": "#ebeef4",
+                    "secondary-fixed-dim": "#6ddd81",
+                    "on-tertiary-fixed-variant": "#614000",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary": "#006e2c",
+                    "background": "#f7f9ff",
+                    "tertiary-fixed-dim": "#ffba45",
+                    "inverse-surface": "#2d3135",
+                    "inverse-on-surface": "#eef1f7",
+                    "inverse-primary": "#adc7ff",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface-variant": "#dfe3e8",
+                    "surface": "#f7f9ff",
+                    "secondary-container": "#86f898",
+                    "secondary-fixed": "#89fa9b",
+                    "on-background": "#181c20",
+                    "surface-tint": "#005bc0",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-secondary-fixed": "#002108",
+                    "on-tertiary-fixed": "#281800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "lg": "24px",
+                    "margin-desktop": "32px",
+                    "sm": "12px",
+                    "xl": "40px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "h3": ["Lexend"],
+                    "h2": ["Lexend"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "h1": ["Lexend"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "h2": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.04em", "fontWeight": "500"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+
+</head>
+<body class="bg-background font-body-md text-on-surface">
+
+<!-- ===== GLOBAL HEADER ===== -->
+<header id="global-header" style="position:fixed;top:0;left:0;width:100%;height:52px;background:white;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;box-shadow:0 1px 4px rgba(0,0,0,.06);">
+  <div style="display:flex;align-items:center;gap:8px;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <span style="font-weight:700;color:#1d4ed8;font-size:15px;">Kolay Yazılı Hazırla</span>
+  </div>
+  <div style="position:relative;" id="g-avatar-wrap">
+    <button onclick="_toggleAvatarMenu()" style="width:36px;height:36px;border-radius:50%;background:#e1e8ff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <div id="avatar-dropdown" style="display:none;position:absolute;top:44px;right:0;width:200px;background:white;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.15);z-index:10000;overflow:hidden;">
+      <div style="padding:12px 16px;border-bottom:1px solid #f1f5f9;">
+        <div id="g-user-name" style="font-size:13px;font-weight:600;color:#111827;">Kullanıcı</div>
+        <div id="g-user-plan" style="font-size:11px;color:#94a3b8;margin-top:2px;">Giriş yapılmadı</div>
+      </div>
+      <div style="padding:6px;">
+        <button onclick="_toggleAvatarMenu();git(PAGES.anaSayfa)" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 10px;border:none;background:none;border-radius:8px;cursor:pointer;font-size:13px;color:#374151;text-align:left;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='none'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          Ana Sayfa
+        </button>
+        <button onclick="_toggleAvatarMenu();git(PAGES.uyelik)" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 10px;border:none;background:none;border-radius:8px;cursor:pointer;font-size:13px;color:#374151;text-align:left;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='none'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Pro'ya Yükselt
+        </button>
+        <button onclick="_toggleAvatarMenu();git('admin.html')" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 10px;border:none;background:none;border-radius:8px;cursor:pointer;font-size:13px;color:#6366f1;text-align:left;font-weight:600;" onmouseover="this.style.background='#f5f3ff'" onmouseout="this.style.background='none'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Yönetici Paneli
+        </button>
+        <div style="border-top:1px solid #f1f5f9;margin:4px 0;"></div>
+        <button onclick="_toggleAvatarMenu();_cikisYap()" style="width:100%;display:flex;align-items:center;gap:10px;padding:9px 10px;border:none;background:none;border-radius:8px;cursor:pointer;font-size:13px;color:#ef4444;text-align:left;" onmouseover="this.style.background='#fef2f2'" onmouseout="this.style.background='none'">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Çıkış Yap
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<div style="height:52px;" id="global-header-spacer"></div>
+
+
+
+<!-- VIEW: giris -->
+<div id="view-giris" class="view" style="display:none;">
+<div class="max-w-md w-full grid grid-cols-1 gap-8">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="flex items-center space-x-3 mb-2">
+<div aria-hidden="true" class="academic-emblem">
+<div class="mortarboard-shape"></div>
+<div class="checkmark-extension"></div>
+</div>
+<span class="font-h2 text-primary tracking-tight">EduAssess</span>
+</div>
+<h1 class="font-h1 text-on-surface">Tekrar hoş geldiniz</h1>
+<p class="font-body-md text-on-surface-variant max-w-sm">
+                Akademik mükemmelliği ölçmek için gelişmiş değerlendirme araçlarınıza erişin.
+            </p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-8 rounded-xl shadow-sm">
+<form class="space-y-6">
+<div class="space-y-1.5">
+<label class="block font-label-md text-on-surface" for="email">E-posta Adresi</label>
+<input class="w-full h-12 px-4 bg-white border border-outline-variant rounded-lg font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="email" placeholder="isim@okul.edu.tr" type="email"/>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="block font-label-md text-on-surface" for="password">Şifre</label>
+<a class="text-label-sm text-primary hover:underline" href="javascript:void(0)">Şifremi unuttum</a>
+</div>
+<div class="relative">
+<input class="w-full h-12 px-4 bg-white border border-outline-variant rounded-lg font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-outline" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="font-label-sm text-on-surface-variant" for="remember">Beni hatırla</label>
+</div>
+<button class="w-full h-12 bg-primary text-on-primary font-label-md rounded-lg hover:opacity-95 active:scale-[0.99] transition-all shadow-sm" type="submit">
+                    Giriş Yap
+                </button>
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 text-label-sm text-outline">veya şununla devam et</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<button class="w-full h-12 flex items-center justify-center space-x-3 bg-white border border-outline-variant rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span>Google ile Giriş Yap</span>
+</button>
+</form>
+</div>
+<div class="text-center space-y-4">
+<p class="font-body-md text-on-surface-variant">
+                Henüz bir hesabınız yok mu? <a class="text-primary font-label-md hover:underline" href="javascript:void(0)">Kaydolun</a>
+</p>
+<div class="flex justify-center space-x-6">
+<a class="font-label-sm text-outline hover:text-on-surface transition-colors" href="javascript:void(0)">Kullanım Şartları</a>
+<a class="font-label-sm text-outline hover:text-on-surface transition-colors" href="javascript:void(0)">Gizlilik Politikası</a>
+<a class="font-label-sm text-outline hover:text-on-surface transition-colors" href="javascript:void(0)">Destek</a>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+<div aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03]">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<pattern height="10" id="grid" patternunits="userSpaceOnUse" width="10">
+<path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+</div>
+</div>
+<!-- VIEW: anaSayfa -->
+<div id="view-anaSayfa" class="view active" style="display:block;">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400" data-icon="menu_book">menu_book</span>
+<span class="text-xl font-bold text-blue-700 dark:text-blue-500 font-h3">Kolay Yazılı Hazırla</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<nav class="flex gap-4">
+<a class="text-blue-700 dark:text-blue-400 font-bold font-lexend text-base" href="javascript:void(0)">Home</a>
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-1 px-2 rounded-lg" href="javascript:void(0)" onclick="goster('senaryo')">Scenarios</a>
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-1 px-2 rounded-lg" href="javascript:void(0)" onclick="goster('senaryo')">Library</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="person">person</span>
+</div>
+</div>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-margin-desktop py-8 pb-24">
+<!-- Hero Section -->
+<section class="mb-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-lg bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<div class="space-y-xs">
+<h1 class="font-h1 text-h1 text-primary">Merhaba, Ahmet Bey</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Bugün hangi sınıfınız için sınav hazırlamak istersiniz? Müfredata uyumlu senaryolarınız sizi bekliyor.</p>
+</div>
+<div class="flex -space-x-4">
+<div class="w-16 h-16 rounded-full border-4 border-white bg-blue-100 flex items-center justify-center overflow-hidden">
+<img alt="Teacher profile" class="w-full h-full object-cover" data-alt="professional portrait of a middle aged male teacher with glasses in a library or classroom setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRBRMJpB7yE-151DZwAgiVWta8koLgut8yAPt45L5EyhGeXBQZIurYjOk0IkKu_knTh2MQoT5MMNIupUtCx8gMXLAZHi8pgXeaiTcitZKWbpD51PiuG9l_AZXXFYIcpKO-FUMF-keEgENv288j-wTLh4O4-aUH9LyMIZVWkGOfXI0iAXZ9OU2_UVyH9iKzb5Lptpzhmv_rOhc2qiUIsijh8sB-pskmlKWJet2A1nxs5-Sc2xHCYKSuaNMuDsXVSpSusNhSwLMd9c"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions Bento Grid -->
+<section class="mb-xl">
+<h2 class="font-h2 text-h2 mb-lg">Hızlı İşlemler</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Primary Action -->
+<a class="md:col-span-2 bg-primary text-on-primary p-lg rounded-xl flex flex-col justify-between min-h-[240px] shadow-lg hover:brightness-110 transition-all cursor-pointer relative overflow-hidden" href="javascript:void(0)" onclick="goster('senaryo')">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-white" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="font-h3 text-h3 mb-xs">MEB Senaryolu Sınav Hazırla</h3>
+<p class="font-body-md opacity-90 max-w-sm">Güncel MEB müfredat senaryolarına tam uyumlu, kazanım odaklı sınavlar oluşturun.</p>
+</div>
+<div class="mt-lg relative z-10">
+<div class="bg-white text-primary font-label-md px-lg py-sm rounded-lg flex items-center gap-base inline-flex">
+                            Hemen Başla
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Decorative background icon -->
+<span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[200px] opacity-10" data-icon="history_edu">history_edu</span>
+</a>
+<div class="flex flex-col gap-gutter">
+<!-- Secondary Action 1 -->
+<a class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-all cursor-pointer flex items-center gap-md" href="javascript:void(0)" onclick="goster('senaryo')">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface">Soru Bankası</h4>
+<p class="font-body-sm text-on-surface-variant">Binlerce onaylı soru</p>
+</div>
+</a>
+<!-- Secondary Action 2 -->
+<a class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-all cursor-pointer flex items-center gap-md" href="javascript:void(0)" onclick="goster('adminSoru')">
+<div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface">Soru/Rubrik Ekle</h4>
+<p class="font-body-sm text-on-surface-variant">Kendi materyalini ekle</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Premium Banner -->
+<section class="mb-xl">
+<div class="bg-gradient-to-r from-tertiary-container to-tertiary text-white p-lg rounded-xl flex flex-col md:flex-row items-center justify-between gap-md">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-4xl" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div>
+<h3 class="font-h3 text-h3 leading-tight">Premium Üyelik Aktif</h3>
+<p class="font-body-sm opacity-90">Sınırsız PDF dışa aktarma ve yapay zeka destekli soru üretimi özelliklerine sahipsiniz.</p>
+</div>
+</div>
+<a class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-label-md px-lg py-sm rounded-lg transition-colors shrink-0" href="javascript:void(0)" onclick="goster('uyelik')">
+                    Planı Yönet
+                </a>
+</div>
+</section>
+<!-- Recent Exams -->
+<section class="mb-xl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-h2 text-h2">Son Hazırlanan Sınavlar</h2>
+<a class="text-primary font-label-md flex items-center gap-xs" href="javascript:void(0)">Tümünü Gör <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Exam Card 1 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="p-base bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="calculate">calculate</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded uppercase">Tamamlandı</span>
+</div>
+<h4 class="font-h3 text-lg mb-xs group-hover:text-primary transition-colors">9. Sınıf Matematik</h4>
+<p class="font-body-sm text-on-surface-variant mb-md">1. Dönem 2. Yazılı - Senaryo 1</p>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant/30">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 12 May 2024
+                        </span>
+<div class="flex gap-xs">
+<button class="p-xs hover:bg-surface-container rounded transition-colors" title="Download PDF">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="download">download</span>
+</button>
+<button class="p-xs hover:bg-surface-container rounded transition-colors" title="Edit">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Exam Card 2 -->
+<div class="bg-white border border-outline-variant rounded-xl p-md hover:border-primary transition-colors cursor-pointer group">
+<div class="flex justify-between items-start mb-md">
+<div class="p-base bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded uppercase">Tamamlandı</span>
+</div>
+<h4 class="font-h3 text-lg mb-xs group-hover:text-primary transition-colors">11. Sınıf Edebiyat</h4>
+<p class="font-body-sm text-on-surface-variant mb-md">2. Dönem 1. Yazılı - Klasik</p>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant/30">
+<span class="font-label-sm text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 10 May 2024
+                        </span>
+<div class="flex gap-xs">
+<button class="p-xs hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="download">download</span>
+</button>
+<button class="p-xs hover:bg-surface-container rounded transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty state placeholder or third card -->
+<a class="bg-surface-container-low border-2 border-dashed border-outline-variant rounded-xl p-md flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity" href="javascript:void(0)" onclick="goster('senaryo')">
+<span class="material-symbols-outlined text-4xl mb-base" data-icon="post_add">post_add</span>
+<p class="font-label-md">Yeni bir sınav oluşturmak için tıklayın</p>
+</a>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<a class="fixed bottom-24 right-6 md:right-12 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40" href="javascript:void(0)" onclick="goster('senaryo')">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</a>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-none">
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-2xl p-2 active:scale-95 transition-transform duration-150" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-lexend text-[12px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('senaryo')">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-lexend text-[12px] font-medium">Scenarios</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('senaryo')">
+<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+<span class="font-lexend text-[12px] font-medium">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('uyelik')">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-lexend text-[12px] font-medium">Plans</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('anaSayfa')">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[12px] font-medium">Profile</span>
+</a>
+</nav>
+</div>
+<!-- VIEW: senaryo -->
+<div id="view-senaryo" class="view" style="display:none;">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 z-50 flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="p-2 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full" onclick="window.location.href='{{DATA:SCREEN:SCREEN_32}}'">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h1 class="font-lexend text-xl font-bold text-blue-700 dark:text-blue-400">EduAssess</h1>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-6 mr-4">
+<a class="text-blue-700 dark:text-blue-400 font-label-md text-label-md" href="javascript:void(0)">Senaryolar</a>
+<a class="text-slate-500 dark:text-slate-400 font-label-md text-label-md hover:text-blue-600" href="javascript:void(0)">Sorular</a>
+<a class="text-slate-500 dark:text-slate-400 font-label-md text-label-md hover:text-blue-600" href="javascript:void(0)">Geçmiş</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtxFhVybLHQOaTafL8ycwZOU9PKmlwAvc9q87Ej9A29JtCsmOfev-f51K32hWN7dsyvw_y6l4pLdoVekRyqVFJ9QCAZ-hc0D0_VbvH7cCbxStMCNCupbXz4VvZwHJ2gcBT_rNhn4aJVoi72JvTbknYsOO3t4PCsqzluk_tB7MJ7FVnZE4XQyfatkShkA08wuDC_IhHrIB4HAe-iAzBtFLveK3uSHchFgYVK5el977wgRltp-l86bH5mH4-pQpAb-kLWNQq2Z6cUm8"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-margin max-w-container-max mx-auto">
+<!-- Hero Section & Filters -->
+<section class="mb-12">
+<div class="mb-8">
+<h2 class="font-h2 text-h2 text-primary mb-2">MEB Sınav Senaryoları</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Ölçme, Değerlendirme ve Sınav Hizmetleri Genel Müdürlüğü tarafından yayınlanan resmi sınav senaryolarına göre sınavınızı oluşturun.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline px-1">Eğitim Öğretim Yılı</label>
+<div class="relative">
+<select class="w-full bg-surface border-outline-variant rounded-lg py-3 px-4 font-body-md text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>2025-2026</option>
+<option>2024-2025</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline px-1">Ders</label>
+<div class="relative">
+<select class="w-full bg-surface border-outline-variant rounded-lg py-3 px-4 font-body-md text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>Matematik</option>
+<option>Türkçe</option>
+<option>Fen Bilimleri</option>
+<option>Sosyal Bilgiler</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline px-1">Sınıf Düzeyi</label>
+<div class="relative">
+<select class="w-full bg-surface border-outline-variant rounded-lg py-3 px-4 font-body-md text-body-md appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>9. Sınıf</option>
+<option>10. Sınıf</option>
+<option>11. Sınıf</option>
+<option>12. Sınıf</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex items-end">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3.5 rounded-lg hover:bg-primary-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filtreleri Uygula
+                    </button>
+</div>
+</div>
+</section>
+<!-- Scenario Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Scenario 1 -->
+<div class="group bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col cursor-pointer" onclick="window.location.href='{{DATA:SCREEN:SCREEN_15}}'">
+<div class="h-2 bg-primary"></div>
+<div class="p-6 flex-1">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-h3 text-h3 text-on-surface">Senaryo 1</h3>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">RESMİ</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Kazanım Sayısı</p>
+<p class="font-h3 text-lg">8 Kazanım</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">format_list_numbered</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Toplam Soru Sayısı</p>
+<p class="font-h3 text-lg">10 Soru</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Zorluk Seviyesi</p>
+<div class="flex gap-1 mt-1">
+<div class="h-1.5 w-8 rounded-full bg-secondary-container"></div>
+<div class="h-1.5 w-8 rounded-full bg-outline-variant"></div>
+<div class="h-1.5 w-8 rounded-full bg-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-on-surface ml-2 -mt-1">Temel Seviye</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant">
+<button class="w-full py-2.5 border border-primary text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md rounded-lg transition-all flex items-center justify-center gap-2">
+                        Seç ve Devam Et
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Scenario 2 -->
+<div class="group bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col cursor-pointer">
+<div class="h-2 bg-secondary"></div>
+<div class="p-6 flex-1">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-h3 text-h3 text-on-surface">Senaryo 2</h3>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">RESMİ</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Kazanım Sayısı</p>
+<p class="font-h3 text-lg">12 Kazanım</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">format_list_numbered</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Toplam Soru Sayısı</p>
+<p class="font-h3 text-lg">8 Soru</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Zorluk Seviyesi</p>
+<div class="flex gap-1 mt-1">
+<div class="h-1.5 w-8 rounded-full bg-secondary-container"></div>
+<div class="h-1.5 w-8 rounded-full bg-secondary-container"></div>
+<div class="h-1.5 w-8 rounded-full bg-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-on-surface ml-2 -mt-1">Orta Seviye</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant">
+<button class="w-full py-2.5 border border-primary text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md rounded-lg transition-all flex items-center justify-center gap-2">
+                        Seç ve Devam Et
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Scenario 3 -->
+<div class="group bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col cursor-pointer">
+<div class="h-2 bg-tertiary"></div>
+<div class="p-6 flex-1">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-h3 text-h3 text-on-surface">Senaryo 3</h3>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">RESMİ</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Kazanım Sayısı</p>
+<p class="font-h3 text-lg">15 Kazanım</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">format_list_numbered</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Toplam Soru Sayısı</p>
+<p class="font-h3 text-lg">6 Soru</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<div>
+<p class="text-outline font-label-sm text-label-sm uppercase tracking-tight">Zorluk Seviyesi</p>
+<div class="flex gap-1 mt-1">
+<div class="h-1.5 w-8 rounded-full bg-secondary-container"></div>
+<div class="h-1.5 w-8 rounded-full bg-secondary-container"></div>
+<div class="h-1.5 w-8 rounded-full bg-secondary-container"></div>
+<span class="font-label-sm text-label-sm text-on-surface ml-2 -mt-1">İleri Seviye</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant">
+<button class="w-full py-2.5 border border-primary text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md rounded-lg transition-all flex items-center justify-center gap-2">
+                        Seç ve Devam Et
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Information Alert -->
+<div class="mt-12 bg-blue-50 border border-blue-100 p-4 rounded-lg flex gap-4">
+<span class="material-symbols-outlined text-blue-700">info</span>
+<div>
+<p class="font-label-md text-label-md text-blue-800">Senaryo Seçimi Hakkında</p>
+<p class="font-body-md text-sm text-blue-700 mt-1">Sınav senaryoları, MEB tarafından belirlenen çerçeve doğrultusunda kazanım dağılımı ve soru sayılarını önceden tanımlar. Seçtiğiniz senaryoya göre soru havuzundan otomatik veya manuel seçim yapabilirsiniz.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-center px-6 pb-safe bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 shadow-[0_-1px_3px_rgba(0,0,0,0.05)] md:hidden">
+<a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 rounded-xl px-3 py-1 transition-transform scale-95 active:scale-90" href="javascript:void(0)">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-lexend text-[10px] font-medium mt-1">Senaryolar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 transition-transform scale-95 active:scale-90" href="javascript:void(0)">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-lexend text-[10px] font-medium mt-1">Sorular</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 transition-transform scale-95 active:scale-90" href="javascript:void(0)">
+<span class="material-symbols-outlined">history</span>
+<span class="font-lexend text-[10px] font-medium mt-1">Geçmiş</span>
+</a>
+</nav>
+</div>
+<!-- VIEW: sorular -->
+<div id="view-sorular" class="view" style="display:none;">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 z-50 flex justify-between items-center px-4 h-16 w-full">
+<div class="flex items-center gap-3">
+<button class="p-2 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full">
+<span class="material-symbols-outlined text-slate-500">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold text-blue-700 dark:text-blue-400 font-lexend">EduAssess</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 items-center mr-4">
+<a class="font-lexend text-base text-blue-700 dark:text-blue-400 transition-colors duration-200" href="javascript:void(0)">Senaryolar</a>
+<a class="font-lexend text-base text-slate-500 dark:text-slate-400 transition-colors duration-200 hover:bg-slate-50" href="javascript:void(0)">Sorular</a>
+<a class="font-lexend text-base text-slate-500 dark:text-slate-400 transition-colors duration-200 hover:bg-slate-50" href="javascript:void(0)">Geçmiş</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="professional portrait of an educator in a bright office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy8dMpSN02IWkNihhdwhWvq7sJ-Pyx8zvjJH_F55oCV9eHVgFDh0_5ez7ueScjaDceUPah-IGMz8E5e44_3Qozf-TxZxxw1C8g-8-0GrWWRntOtFQYgp0nxdeL98_nYkwQhocQJ_wOJeWaB1GiRqaBMUfFHXo7xNggimzjeEazJkJHb4ALboTZ_Oto255LiTGRalvegbVEGr4ncZeO1ZMrqqgUuZjfGnD3vX2YxMol_gfC9kd8PIqpbhHSuAwuHdLF_S8keNeKv7I"/>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Scenario Header Section -->
+<section class="mb-8">
+<div class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary-container text-on-primary-container text-label-sm font-label-sm px-2 py-0.5 rounded">MATEMATİK</span>
+<span class="text-slate-400 text-label-sm">•</span>
+<span class="text-slate-500 text-label-sm font-label-sm">9. Sınıf</span>
+</div>
+<h2 class="text-h3 font-h3 text-on-surface">Matematik 1. Dönem 2. Yazılı - Senaryo 1</h2>
+<p class="text-body-md font-body-md text-slate-500 mt-1">MEB 2023-2024 Akademik Takvimi ve Kazanım Dağılımına Uygun</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-full hover:bg-primary-fixed-dim transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+                        Kılavuz İndir
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-container transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                        Taslağı Kaydet
+                    </button>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Knowledge Distribution Table -->
+<aside class="lg:col-span-5 space-y-6">
+<div class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="p-4 bg-surface-container-low border-b border-outline-variant flex justify-between items-center">
+<h3 class="font-h3 text-[18px] text-on-surface">Kazanım Dağılım Tablosu</h3>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-0.5 rounded-full">MEB RESMİ</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-bright border-b border-outline-variant">
+<th class="p-4 text-label-sm font-label-sm text-slate-500 w-24">Kod</th>
+<th class="p-4 text-label-sm font-label-sm text-slate-500">Açıklama</th>
+<th class="p-4 text-label-sm font-label-sm text-slate-500 text-center w-24">Hedef Soru</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="p-4 text-label-md font-bold text-primary">M.9.1.1.1</td>
+<td class="p-4 text-label-sm font-medium text-on-surface-variant">Önermeyi, önermenin doğruluk değerini, iki önermenin denkliğini açıklar.</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-on-surface font-bold">2</span>
+</td>
+</tr>
+<tr>
+<td class="p-4 text-label-md font-bold text-primary">M.9.1.2.1</td>
+<td class="p-4 text-label-sm font-medium text-on-surface-variant">Bileşik önermeyi örneklerle açıklar, "ve, veya, ya da" bağlaçlarını kullanır.</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-on-surface font-bold">3</span>
+</td>
+</tr>
+<tr>
+<td class="p-4 text-label-md font-bold text-primary">M.9.2.1.1</td>
+<td class="p-4 text-label-sm font-medium text-on-surface-variant">Kümeler ile ilgili temel kavramları açıklar.</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-on-surface font-bold">3</span>
+</td>
+</tr>
+<tr>
+<td class="p-4 text-label-md font-bold text-primary">M.9.2.2.1</td>
+<td class="p-4 text-label-sm font-medium text-on-surface-variant">Alt kümeyi kullanarak işlemler yapar.</td>
+<td class="p-4 text-center">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-on-surface font-bold">2</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Tips / Guidance Card -->
+<div class="bg-secondary-container/20 rounded-xl p-6 border border-secondary-container/30">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl">lightbulb</span>
+<div>
+<h4 class="font-bold text-on-secondary-container mb-1">Eğitimci Notu</h4>
+<p class="text-sm text-on-secondary-container/80 leading-relaxed">Senaryo 1 kapsamında mantık ve kümeler ağırlıklı sorular seçilmelidir. Toplam soru sayısı 10 adet olarak planlanmıştır.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Question Bank Flow -->
+<section class="lg:col-span-7 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-h3 text-[18px]">Soru Bankası</h3>
+<div class="flex items-center gap-2">
+<span class="text-label-sm text-slate-500">Sırala:</span>
+<select class="text-label-sm border-outline-variant rounded-lg focus:ring-primary focus:border-primary">
+<option>En Yeni</option>
+<option>Zorluk (Artan)</option>
+<option>Zorluk (Azalan)</option>
+</select>
+</div>
+</div>
+<!-- Question Card 1 -->
+<div class="bg-white rounded-xl border border-outline-variant p-5 hover:border-primary/50 transition-all shadow-sm group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase">M.9.1.1.1</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase">KOLAY</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase">ÇOKTAN SEÇMELİ</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="mb-6">
+<p class="text-body-md font-body-md text-on-surface mb-4">Aşağıdakilerden hangisi bir önerme belirtir?</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="p-3 border border-outline-variant rounded-lg text-sm bg-slate-50">A) Okula gittin mi?</div>
+<div class="p-3 border border-outline-variant rounded-lg text-sm bg-slate-50">B) Bugün hava çok güzel.</div>
+<div class="p-3 border border-outline-variant rounded-lg text-sm bg-slate-50 border-primary bg-primary/5">C) En küçük asal sayı 2'dir.</div>
+<div class="p-3 border border-outline-variant rounded-lg text-sm bg-slate-50">D) Keşke kar yağsa.</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span class="text-[12px]">Son kullanım: 2 hafta önce</span>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full font-label-md text-label-md hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                            Sınava Ekle
+                        </button>
+</div>
+</div>
+<!-- Question Card 2 -->
+<div class="bg-white rounded-xl border border-outline-variant p-5 hover:border-primary/50 transition-all shadow-sm group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase">M.9.1.2.1</span>
+<span class="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded uppercase">ORTA</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase">AÇIK UÇLU</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+<div class="mb-6">
+<p class="text-body-md font-body-md text-on-surface mb-4">p ≡ 1 ve q ≡ 0 olduğuna göre (p ∧ q') ∨ (p' ∧ q) bileşik önermesinin doğruluk değerini işlem basamaklarını göstererek bulunuz.</p>
+<div class="w-full h-24 bg-slate-50 border-2 border-dashed border-outline-variant rounded-lg flex items-center justify-center text-slate-400 italic text-sm">
+                            Görsel içeren soru alanı
+                        </div>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-slate-100">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span class="text-[12px]">Görüntüleme: 1.2k</span>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full font-label-md text-label-md hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                            Sınava Ekle
+                        </button>
+</div>
+</div>
+<!-- Question Card 3 -->
+<div class="bg-white rounded-xl border border-outline-variant p-5 border-primary/40 bg-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase">M.9.2.1.1</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase">KOLAY</span>
+<span class="bg-slate-100 text-slate-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase">ÇOKTAN SEÇMELİ</span>
+</div>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">check</span>
+                             EKLENDİ
+                        </span>
+</div>
+<div class="mb-6 opacity-60">
+<p class="text-body-md font-body-md text-on-surface mb-2">A = {x | x &lt; 10, x asal sayı} kümesinin eleman sayısı kaçtır?</p>
+</div>
+<div class="flex justify-end pt-4 border-t border-primary/10">
+<button class="flex items-center gap-2 text-error px-4 py-2 rounded-full font-label-md text-label-md hover:bg-error-container/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">remove_circle</span>
+                            Sınavdan Çıkar
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Analysis Panel -->
+<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-100 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-50 px-6 py-4">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex flex-wrap items-center gap-8">
+<!-- Counter -->
+<div class="flex items-center gap-3">
+<div class="relative w-12 h-12">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="88" stroke-width="4"></circle>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center text-label-sm font-bold">3/10</span>
+</div>
+<div>
+<p class="text-[12px] text-slate-500 font-medium">SEÇİLEN SORULAR</p>
+<p class="text-on-surface font-bold">Hedeflenen: 10 Soru</p>
+</div>
+</div>
+<!-- Missing Gains -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-error-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div>
+<p class="text-[12px] text-slate-500 font-medium">EKSİK KAZANIMLAR</p>
+<p class="text-error font-bold">4 Kazanım Boşta</p>
+</div>
+</div>
+<!-- Estimated Duration -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-high rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">timer</span>
+</div>
+<div>
+<p class="text-[12px] text-slate-500 font-medium">TAHMİNİ SÜRE</p>
+<p class="text-on-surface font-bold">40 Dakika</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-8 py-3 rounded-full border border-outline font-label-md text-label-md hover:bg-slate-50 transition-colors">Önizleme</button>
+<button class="flex-1 md:flex-none px-8 py-3 rounded-full bg-primary text-white font-label-md text-label-md hover:bg-primary-container shadow-lg shadow-primary/20 transition-all">Sınavı Oluştur</button>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation Suppressed based on "Task-Focused" rule -->
+</div>
+<!-- VIEW: dizgi -->
+<div id="view-dizgi" class="view" style="display:none;">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 fixed top-0 w-full z-50 flex items-center justify-between px-4 h-16 w-full font-lexend antialiased">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-slate-50 transition-colors">menu</span>
+<div class="flex items-center gap-2">
+<!-- Academic Emblem Logo -->
+<div class="relative w-8 h-8 flex items-center justify-center">
+<svg class="fill-primary" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"></path>
+<path class="fill-secondary" d="M19 8L15 10L17 11L21 9L19 8Z"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-blue-700 dark:text-blue-400 tracking-tight">EduAssess</h1>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="javascript:void(0)">Dashboard</a>
+<a class="text-blue-700 dark:text-blue-400 font-semibold px-3 py-2 rounded-lg" href="javascript:void(0)">Exam Builder</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-lg" href="javascript:void(0)">Question Bank</a>
+</nav>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a professional female educator in a bright modern office setting, smiling and confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Wvp7R9WQAvUdeaXpDwUGoIprUM630DeOVCRJ67FYTMigX8uv8yEf60MOeFHIWnkRVyyWrKpoTVFnLN1SD6j8x7LJaoHhBdUiZboEcVG1Qz8L7345CUPY5F5KKnH4Tmx5TuqyDpMhozQ2hRrIwpdUM9KrUK5PLN52rqXb9yHQz3_bUItdhL5V7Bv_epozoO8bZSNX6jKBKP6ld7ZnaYaGiyyUy_wS_RBzpROf-2pVoQiJsWPsMzzS3wXziThXLStJxbmmWh8ZJ-M"/>
+</div>
+</div>
+</header>
+<!-- NavigationDrawer (Sidebar) -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col py-6 bg-white dark:bg-slate-900 h-full w-72 border-r border-slate-100 dark:border-slate-800 hidden lg:flex mt-16">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-bold text-blue-700 dark:text-blue-400 font-lexend">ExamBuilder Pro</h2>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-lexend text-sm" href="javascript:void(0)">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-medium rounded-r-full transition-all duration-200 ease-in-out font-lexend text-sm" href="javascript:void(0)">
+<span class="material-symbols-outlined">edit_note</span>
+                Exam Builder
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-lexend text-sm" href="javascript:void(0)">
+<span class="material-symbols-outlined">database</span>
+                Question Bank
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-lexend text-sm" href="javascript:void(0)">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-lexend text-sm" href="javascript:void(0)">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-72 pt-24 px-6 pb-12 min-h-screen">
+<div class="max-w-container-max mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Sınav Kağıdı Hazırlama</h2>
+<p class="font-body-md text-on-surface-variant">Yeni bir değerlendirme kurgulayın.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2 border border-primary text-primary rounded-lg font-label-md hover:bg-surface-container-low transition-colors">
+                        Taslağı Kaydet
+                    </button>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-lg font-label-md hover:opacity-90 shadow-sm transition-all active:scale-95">
+                        Yayınla ve Yazdır
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Interface -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Exam Meta Settings (Left Column) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<section class="bg-white p-6 rounded-xl border border-outline-variant paper-shadow">
+<h3 class="font-h3 text-h3 text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">info</span>
+                            Sınav Bilgileri
+                        </h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">Okul Adı</label>
+<input class="w-full border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary font-body-md" placeholder="Örn: Fen Bilimleri Anadolu Lisesi" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">Sınav Adı</label>
+<input class="w-full border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary font-body-md" placeholder="Örn: Türkçe, Matematik, Fen Bilimleri" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">Akademik Yıl</label>
+<select class="w-full border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary font-body-md"><option>2025-2026</option><option>2024-2025</option><option>2023-2024</option></select>
+</div>
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">Dönem</label>
+<select class="w-full border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary font-body-md ring-2 ring-primary border-primary"><option>1. Dönem 1. Sınav</option><option>1. Dönem 2. Sınav</option><option>2. Dönem 1. Sınav</option><option>2. Dönem 2. Sınav</option></select>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary-container text-white p-6 rounded-xl border border-primary/20 paper-shadow">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-h3 text-h3">Özet</h3>
+<span class="material-symbols-outlined text-3xl">analytics</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+<span class="block text-xs opacity-80">Toplam Soru</span>
+<span class="text-2xl font-bold">12</span>
+</div>
+<div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+<span class="block text-xs opacity-80">Toplam Puan</span>
+<span class="text-2xl font-bold text-secondary-fixed">100</span>
+</div>
+</div>
+<div class="mt-6">
+<div class="flex justify-between text-xs mb-2">
+<span>Puan Dağılımı Tamamlandı</span>
+<span>100%</span>
+</div>
+<div class="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim" style="width: 100%"></div>
+</div>
+</div>
+</section>
+</div>
+<!-- Exam Content / Questions (Right Column) -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-white rounded-xl border border-outline-variant paper-shadow overflow-hidden">
+<!-- Preview Header Area -->
+<div class="bg-surface-container-low p-8 border-b border-outline-variant text-center space-y-2">
+<h4 class="text-lg font-bold text-on-surface uppercase tracking-widest">FEN BİLİMLERİ ANADOLU LİSESİ</h4>
+<div class="flex justify-center gap-8 text-sm font-medium text-on-surface-variant">
+<span>MATEMATİK DERSİ</span>
+<span>2023-2024 EĞİTİM YILI</span>
+<span>12-A SINIFI</span>
+</div>
+<div class="w-full max-w-2xl mx-auto h-px bg-outline-variant my-4"></div>
+<div class="grid grid-cols-3 text-left max-w-2xl mx-auto text-xs text-on-surface-variant">
+<div>AD SOYAD: ................................</div>
+<div>SINIF/NO: .............</div>
+<div class="text-right">PUAN: ............</div>
+</div>
+</div>
+<!-- Question List -->
+<div class="p-6 space-y-6">
+<!-- Question Item 1 -->
+<div class="group relative flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-outline-variant hover:bg-surface-bright transition-all">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">1</div>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-on-surface mb-3 leading-relaxed">
+                                        Aşağıdaki fonksiyonlardan hangisi (0, ∞) aralığında daima artandır?
+                                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="flex items-center gap-2 text-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg border border-transparent">
+<span class="font-bold text-primary">A)</span> f(x) = x² - 4x + 3
+                                        </div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg border border-transparent">
+<span class="font-bold text-primary">B)</span> f(x) = 1/x
+                                        </div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg border border-transparent">
+<span class="font-bold text-primary">C)</span> f(x) = eˣ + x
+                                        </div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg border border-transparent">
+<span class="font-bold text-primary">D)</span> f(x) = ln(1/x)
+                                        </div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="relative">
+<input class="w-16 h-10 border-outline-variant rounded-lg text-center font-bold text-primary focus:ring-primary focus:border-primary" type="number" value="10"/>
+<span class="absolute -top-2 -right-1 text-[10px] bg-primary-container text-white px-1.5 rounded-full">PT</span>
+</div>
+<button class="p-2 text-error hover:bg-error-container rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Question Item 2 -->
+<div class="group relative flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-outline-variant hover:bg-surface-bright transition-all">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-outline cursor-grab active:cursor-grabbing opacity-0 group-hover:opacity-100 transition-opacity">drag_indicator</span>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">2</div>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-on-surface mb-3 leading-relaxed">
+                                        Logaritma tabanı e olan fonksiyona ne ad verilir? Açıklayınız.
+                                    </p>
+<div class="w-full h-12 border-b-2 border-dotted border-outline-variant"></div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="relative">
+<input class="w-16 h-10 border-outline-variant rounded-lg text-center font-bold text-primary focus:ring-primary focus:border-primary" type="number" value="15"/>
+<span class="absolute -top-2 -right-1 text-[10px] bg-primary-container text-white px-1.5 rounded-full">PT</span>
+</div>
+<button class="p-2 text-error hover:bg-error-container rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Add Question Action Area -->
+<div class="pt-8 flex flex-col items-center border-t border-slate-100 mt-8">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container text-primary rounded-xl font-label-md hover:bg-surface-dim transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                                        Yeni Soru Oluştur
+                                    </button>
+<button class="flex items-center gap-2 px-6 py-3 border border-dashed border-outline text-on-surface-variant rounded-xl font-label-md hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">library_add</span>
+                                        Soru Bankasından Ekle
+                                    </button>
+</div>
+<p class="mt-4 text-xs text-outline font-medium uppercase tracking-widest">veya buraya sürükleyip bırakın</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for Settings -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</button>
+</div>
+<!-- VIEW: onizleme -->
+<div id="view-onizleme" class="view" style="display:none;">
+<style>/* A4 aspect ratio and scaling for preview */
+        .a4-wrapper {
+            width: 100%;
+            max-width: 900px; /* Limits size on desktop */
+            margin: 0 auto;
+        }
+        .a4-page {
+            aspect-ratio: 1 / 1.414; /* Standard A4 ratio */
+            width: 100%;
+            padding: 8mm; /* Increased from 5mm */
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        @media (min-width: 1024px) {
+            .a4-page {
+                padding: 15mm; /* Increased from 10mm */
+            }
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; padding: 0 !important; margin: 0 !important; }
+            .a4-page {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                width: 210mm;
+                height: 297mm;
+                padding: 15mm; /* Increased from 10mm */
+                page-break-after: always;
+            }
+            .a4-wrapper { max-width: none; }
+        }
+        /* Scale down for mobile view while maintaining aspect ratio */
+        @media (max-width: 640px) {
+            .a4-page {
+                padding: 5mm; /* Adjusted relative to the new base */
+                font-size: 0.75rem;
+            }
+            .a4-page h1 { font-size: 1.1rem; line-height: 1.2; }
+            .a4-page h2 { font-size: 0.9rem; }
+            .a4-page .text-sm { font-size: 0.65rem; }
+        }</style>
+<!-- Top Navigation Bar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50 no-print">
+<div class="flex items-center gap-4">
+<button class="transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-full">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">arrow_back</span>
+</button>
+<h1 class="font-lexend font-semibold text-lg text-blue-700 dark:text-blue-400">Sınav Önizleme</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl flex items-center gap-2 text-label-md font-lexend hover:opacity-90 transition-all shadow-sm" onclick="window.print()">
+<span class="material-symbols-outlined text-sm">print</span>
+            Yazdır (PDF)
+        </button>
+<button class="transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-full">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">more_vert</span>
+</button>
+</div>
+</header>
+<main class="container-max mx-auto px-4 py-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Side Controls -->
+<aside class="hidden lg:block lg:col-span-3 space-y-6 no-print">
+<div class="bg-white border border-outline-variant p-6 rounded-xl">
+<h2 class="text-label-md font-bold text-primary mb-4 uppercase">Önizleme Ayarları</h2>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-label-sm text-on-surface-variant">Çift Taraflı</span>
+<div class="w-10 h-5 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-label-sm text-on-surface-variant">Cevap Anahtarı</span>
+<div class="w-10 h-5 bg-outline-variant rounded-full relative">
+<div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 rounded-xl">
+<h2 class="text-label-md font-bold text-primary mb-2 uppercase">Doküman Bilgisi</h2>
+<ul class="space-y-2 text-label-sm">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">description</span>
+                        A4 Standart (Dikey)
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">layers</span>
+                        2 Sayfa
+                    </li>
+<li class="flex items-center gap-2 text-green-600">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                        Müfredat Uyumluluk: %100
+                    </li>
+</ul>
+</div>
+</aside>
+<!-- Main Canvas: Paper Preview -->
+<div class="lg:col-span-9 a4-wrapper">
+<!-- Page 1: Front Side -->
+<div class="a4-page leading-relaxed tracking-[0.01em]">
+<!-- Exam Header -->
+<div class="text-center flex flex-col items-center justify-center rounded-sm w-full mt-4 lg:mt-6 lg:mb-6 lg:p-4 space-y-1 border-[3px] border-red-600 p-1 lg:p-2">
+<p class="text-sm lg:text-base text-slate-900 font-bold">2024-2025 Eğitim-Öğretim Yılı Atatürk Anadolu Lisesi</p>
+<p class="text-sm lg:text-base text-slate-900 font-bold">Türkçe Dersi 2. Dönem 1. Yazılı Sınav (1. Senaryo)</p>
+</div>
+<!-- Student Info Box -->
+<div class="grid grid-cols-12 gap-2 lg:gap-4 mb-8 lg:mb-16">
+<!-- Left Column: Student Details -->
+<div class="col-span-7 lg:col-span-8 flex flex-col gap-2">
+<!-- Adı Soyadı -->
+<div class="flex items-stretch border border-lime-500 rounded-sm overflow-hidden h-[21px] lg:h-[27px]">
+<div class="bg-lime-500 text-white flex items-center justify-center whitespace-nowrap relative px-1 lg:px-1.5 min-w-[60px] lg:min-w-[80px] text-[10px] lg:text-sm">
+                Adı-Soyadı:
+                
+</div>
+<div class="flex-1 bg-white ml-1.5"></div>
+</div>
+<!-- Sınıf / Şube -->
+<div class="flex items-stretch border border-orange-400 rounded-sm overflow-hidden h-[21px] lg:h-[27px]">
+<div class="bg-orange-400 text-white px-2 lg:px-3 flex items-center justify-center whitespace-nowrap relative text-[10px] lg:text-sm">
+                Sınıfı:
+                
+</div>
+<div class="flex-1 bg-white ml-1.5"></div>
+</div>
+</div>
+<!-- Right Column: Scores -->
+<div class="col-span-5 lg:col-span-4 flex flex-col gap-2">
+<!-- Numarası -->
+<div class="flex items-stretch border border-cyan-500 rounded-sm overflow-hidden h-[21px] lg:h-[27px]">
+<div class="bg-cyan-500 text-white px-2 lg:px-3 flex items-center justify-center whitespace-nowrap relative text-[10px] lg:text-sm">
+                Numarası:
+                
+</div>
+<div class="flex-1 bg-white ml-1.5"></div>
+</div>
+<!-- Puanı -->
+<div class="flex items-stretch border border-sky-400 rounded-sm overflow-hidden h-[21px] lg:h-[27px]">
+<div class="bg-sky-400 text-white px-2 lg:px-3 flex items-center justify-center whitespace-nowrap relative text-[10px] lg:text-sm">
+                Puanı:
+                
+</div>
+<div class="flex-1 bg-white ml-1.5"></div>
+</div>
+</div>
+</div>
+<!-- Questions Content -->
+<div class="space-y-6 lg:space-y-8 flex-1">
+<div class="space-y-2 lg:space-y-3">
+<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1">
+<p class="font-bold text-red-600 whitespace-nowrap">1.</p>
+<p class="font-bold">Aşağıdaki paragrafta anlatılmak istenen ana düşünce nedir?</p>
+</div>
+<p class="text-justify italic border-l-2 lg:border-l-4 border-slate-300 bg-slate-50 pl-3 lg:pl-4 py-2 lg:py-3 rounded-r-lg">
+                            "Kitaplar, hiç solmayan bitkilerdir. Onlar sayesinde hiç gitmediğimiz diyarlara yolculuk eder, hiç tanışmadığımız insanlarla dostluk kurarız. Bir kütüphane, sessiz ama dünyanın en kalabalık meydanından daha öğreticidir."
+                        </p>
+<div class="h-16 lg:h-24 border-b border-dotted border-slate-300"></div>
+</div>
+<div class="space-y-2 lg:space-y-3">
+<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1">
+<p class="font-bold text-red-600 whitespace-nowrap">2.</p>
+<p class="font-bold">"Gözden düşmek" deyimini bir cümle içerisinde kullanarak anlamını açıklayınız.</p>
+</div>
+<div class="h-16 lg:h-24 border-b border-dotted border-slate-300"></div>
+</div>
+<div class="space-y-2 lg:space-y-3">
+<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1">
+<p class="font-bold text-red-600 whitespace-nowrap">3.</p>
+<p class="font-bold">Aşağıdaki cümlelerin hangisinde nesnel bir anlatım vardır?</p>
+</div>
+<ul class="space-y-1 lg:space-y-2 ml-2 lg:ml-4">
+<li class="flex items-center gap-2 lg:gap-3">
+<span class="w-5 h-5 lg:w-6 lg:h-6 border border-slate-800 rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold">A</span>
+                                Bu yazarın en güzel kitabı buydu.
+                            </li>
+<li class="flex items-center gap-2 lg:gap-3">
+<span class="w-5 h-5 lg:w-6 lg:h-6 border border-slate-800 rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold">B</span>
+                                Türkiye'nin başkenti Ankara'dır.
+                            </li>
+<li class="flex items-center gap-2 lg:gap-3">
+<span class="w-5 h-5 lg:w-6 lg:h-6 border border-slate-800 rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold">C</span>
+                                Şiir okumak en huzurlu eylemdir.
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Page Footer -->
+<div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest no-print">T.C. MİLLİ EĞİTİM BAKANLIĞI</span>
+<span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">SAYFA 1</span>
+</div>
+</div>
+<!-- Page 2: Back Side -->
+<div class="a4-page leading-relaxed tracking-[0.01em]">
+<div class="space-y-8 lg:space-y-10 flex-1 pt-2 lg:pt-4">
+<div class="space-y-3 lg:space-y-4">
+<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1">
+<p class="font-bold text-red-600 whitespace-nowrap">4.</p>
+<p class="font-bold">Betimleyici anlatım tekniklerini kullanarak "Huzurlu bir köy sabahı" konulu kısa bir metin yazınız.</p>
+</div>
+<div class="h-40 lg:h-56 border-b border-dotted border-slate-300"></div>
+</div>
+<div class="space-y-3 lg:space-y-4">
+<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1">
+<p class="font-bold text-red-600 whitespace-nowrap">5.</p>
+<p class="font-bold">Aşağıdaki boşlukları uygun bağlaçlarla doldurunuz (ama, fakat, çünkü, ancak).</p>
+</div>
+<div class="bg-slate-50 p-3 lg:p-4 rounded-lg space-y-2 text-sm">
+<p>• Çok ders çalıştı <span class="text-slate-400">.....................</span> istediği notu alamadı.</p>
+<p>• Yarın pikniğe gidemeyiz <span class="text-slate-400">.....................</span> hava yağmurlu olacak.</p>
+</div>
+</div>
+<div class="space-y-3 lg:space-y-4">
+<div class="flex items-baseline gap-3 border-b border-slate-100 pb-1">
+<p class="font-bold text-red-600 whitespace-nowrap">6.</p>
+<p class="font-bold">Aşağıdaki kelimelerin zıt anlamlılarını karşılarına yazınız.</p>
+</div>
+<div class="grid grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-3 lg:gap-y-4 w-full lg:w-3/4 ml-2 lg:ml-4 font-bold">
+<div class="flex justify-between border-b border-slate-100 pb-1">
+<span>Cimri:</span>
+<span class="text-slate-400">.................</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 pb-1">
+<span>Taze:</span>
+<span class="text-slate-400">.................</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Signature Section (Bottom Right) -->
+<div class="self-end text-center mt-auto pb-10 lg:pb-16 pr-6 lg:pr-10">
+<p class="font-bold text-slate-800 text-xs lg:text-sm mb-10 lg:mb-12 uppercase tracking-wider">Ders Öğretmeni</p>
+<div class="w-32 lg:w-40 border-t border-slate-800 pt-2">
+<p class="text-[10px] lg:text-xs text-slate-500 italic">İmza / Kaşe</p>
+</div>
+</div>
+<!-- Page Footer -->
+<div class="pt-4 border-t border-slate-100 flex justify-between items-end">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest no-print">TÜRKÇE DERSİ SINAV DOKÜMANI</span>
+<span class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">SAYFA 2</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-slate-900 flex justify-around items-center px-4 py-2 border-t border-slate-200 dark:border-slate-800 no-print">
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 scale-90">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-lexend text-[10px] font-medium">Panel</span>
+</div>
+<div class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 rounded-xl px-3 py-1 scale-90">
+<span class="material-symbols-outlined">description</span>
+<span class="font-lexend text-[10px] font-medium">Sınavlar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-3 py-1 scale-90">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-lexend text-[10px] font-medium">Ayarlar</span>
+</div>
+</nav>
+<!-- FAB -->
+<button class="fixed bottom-24 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform no-print">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- VIEW: uyelik -->
+<div id="view-uyelik" class="view" style="display:none;">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-blue-600 dark:text-blue-400 active:opacity-70 transition-all duration-200">arrow_back</button>
+<h1 class="font-lexend font-semibold text-lg text-blue-600 dark:text-blue-400">Membership</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-500 font-lexend text-label-md" href="javascript:void(0)">Home</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-500 font-lexend text-label-md" href="javascript:void(0)">Exams</a>
+<a class="text-blue-600 dark:text-blue-400 font-bold font-lexend text-label-md" href="javascript:void(0)">Plans</a>
+<a class="text-gray-500 dark:text-gray-400 hover:text-blue-500 font-lexend text-label-md" href="javascript:void(0)">Profile</a>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTpbhnzQ2typEzQi7aKMh8SEvADNfbjT5eE6HpR78RkC8jUGsiQ2z_DYrdrDqpDm0s-yTx5mxotIhAHd3zoOIG6dECj3CPKhEG10I6zrMr3365seJV5wyXejwAesrYyxRMII4F-V2pB5lDYtipP0hMmFe38LFR9lfwN6N1BHlM-8pcPokNsEUJeHdfEn5trouOwQ_Hy4iG3FwStGuTzsSX5Ju5Tlkk_Wk-T6UU6oLNZVOZRwfdIw2dNbywuMBwk2K1HmWag3nwZX4"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+<!-- Info Section -->
+<section class="mb-xl">
+<div class="bg-primary-container text-on-primary-container rounded-xl p-md flex items-start gap-4 shadow-sm border border-primary/20">
+<span class="material-symbols-outlined shrink-0 mt-1">info</span>
+<div class="flex-1">
+<p class="font-lexend font-medium text-body-md">Bilgi</p>
+<p class="font-body-sm opacity-90">Sistemimizi denemeniz için ilk sınav oluşturma işlemi herkes için tamamen ücretsizdir. Hemen başlayıp kalitemizi görebilirsiniz.</p>
+</div>
+</div>
+</section>
+<!-- Hero Section -->
+<div class="text-center mb-xl">
+<h2 class="font-h1 text-primary mb-xs">Üyelik Paketleri</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Eğitim süreçlerinizi hızlandırın, MEB uyumlu sınavları saniyeler içinde hazırlayın.</p>
+</div>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter items-stretch justify-center mx-auto">
+<!-- Tier 1: Ücretsiz Başlangıç -->
+<div class="bg-red-50 rounded-xl border border-red-200 p-lg flex flex-col h-full hover:shadow-md transition-shadow">
+<div class="mb-lg">
+<h3 class="font-h3 text-on-surface mb-xs">Ücretsiz Başlangıç</h3>
+<div class="flex items-baseline gap-1 mt-md">
+<span class="font-h2 text-on-surface">₺0</span>
+<span class="font-label-md text-on-surface-variant">/ilk sınav</span>
+</div>
+</div>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-surface-variant">İlk sınav ücretsiz</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-surface-variant">Tüm MEB Senaryoları Dahil</span>
+</li></ul>
+<button class="w-full py-md px-lg bg-surface-container-high text-on-surface font-lexend font-bold rounded-lg hover:bg-surface-variant active:scale-95 transition-all">
+                    Hemen Başla
+                </button>
+</div>
+<!-- Tier 2: Eğitimci Pro (Monthly) -->
+<div class="bg-green-50 text-on-surface rounded-xl border border-green-200 p-lg flex flex-col h-full shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
+<div class="mb-lg relative z-10"><div class="bg-green-600 text-white text-[10px] uppercase font-bold px-2 py-1 rounded w-fit mb-2">Popüler</div><h3 class="font-h3 mb-xs text-green-800">Eğitimci Pro</h3><div class="flex items-baseline gap-1 mt-md"><span class="font-h2 text-green-900">₺9</span><span class="font-label-md text-green-700">/aylık</span></div></div>
+<ul class="space-y-md mb-xl flex-1 relative z-10"><li class="flex items-start gap-3"><span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span><span class="font-body-sm font-semibold text-green-900">Her Ay Sınırsız Yazılı Kağıdı Hazırlama</span></li><li class="flex items-start gap-3"><span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span><span class="font-body-sm text-green-800">PDF &amp; Word İndirme</span></li><li class="flex items-start gap-3"><span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span><span class="font-body-sm text-green-800">Tüm MEB Senaryoları Dahil</span></li></ul>
+<button class="w-full py-md px-lg bg-green-600 text-white font-lexend font-bold rounded-lg hover:bg-green-700 active:scale-95 transition-all shadow-md">
+                    Abone Ol
+                </button>
+</div>
+<!-- Tier 3: Tek Sınav Paketi -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed rounded-xl border border-tertiary/20 p-lg flex flex-col h-full hover:shadow-md transition-all">
+<div class="mb-lg">
+<h3 class="font-h3 text-on-tertiary-fixed mb-xs">Tek Sınav Paketi</h3>
+<div class="flex items-baseline gap-1 mt-md">
+<span class="font-h2 text-on-tertiary-fixed">₺10</span>
+<span class="font-label-md opacity-80 text-on-tertiary-fixed">/adet</span>
+</div>
+</div>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-tertiary-fixed">1 Adet Tam Sınav Oluşturma</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-tertiary-fixed">PDF &amp; Word İndirme</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-tertiary-fixed">MEB Senaryo Desteği</span>
+</li>
+</ul>
+<button class="w-full py-md px-lg bg-tertiary text-on-tertiary font-lexend font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-md">
+                    Satın Al
+                </button>
+</div>
+<!-- Tier 4: Kurumsal -->
+<div class="bg-white rounded-xl border border-outline-variant p-lg flex flex-col h-full hover:shadow-md transition-shadow">
+<div class="mb-lg">
+<h3 class="font-h3 text-on-surface mb-xs">Kurumsal</h3>
+<p class="font-label-md text-on-surface-variant mt-md">Okul geneli özel çözümler</p>
+</div>
+<ul class="space-y-md mb-xl flex-1">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-surface-variant">Sınırsız kullanıcı erişimi</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-surface-variant">Özel okul paneli</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-body-sm text-on-surface-variant">7/24 Teknik destek</span>
+</li>
+</ul>
+<button class="w-full py-md px-lg border-2 border-primary text-primary font-lexend font-bold rounded-lg hover:bg-primary/5 active:scale-95 transition-all">
+                    Teklif Al
+                </button>
+</div>
+</div>
+<!-- Trust Section -->
+<section class="mt-xl grid grid-cols-1 md:grid-cols-2 gap-lg items-center bg-surface-container-lowest rounded-2xl p-xl overflow-hidden border border-outline-variant/30">
+<div>
+<h2 class="font-h2 text-on-surface mb-md">Neden 'Kolay Yazılı Hazırla'?</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-lexend font-bold text-body-md">%100 MEB Uyumlu</h4>
+<p class="font-body-sm text-on-surface-variant">Yeni müfredat ve senaryolara tam uyum sağlar.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<h4 class="font-lexend font-bold text-body-md">Zaman Tasarrufu</h4>
+<p class="font-body-sm text-on-surface-variant">Ortalama sınav hazırlama süresini 45 dakikadan 3 dakikaya indirir.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<img alt="Education" class="rounded-xl shadow-lg group-hover:scale-[1.02] transition-transform duration-500 w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7EvaaBH9LKWCTGmtmfjdv9SGIhwNxDKIFtgJsMuZfMm6Z9lRQm9A3zmM05MAKiljdYLWbiFRNYsxybS_2vLop6BBI22fMgTeWhFOFM3hKqIAWa-7mVlCzgyQJWNgd4GsHOYCVFuaA9FIJbWMV1TxYsIxdicH1vXWolHRIdLZNslS9ZP6IMKWbmIBSEdDt9XNTCxSCg01mZhb9zr6LMlgVyNp5Ob5-Rv99N4T-P_GyzpR_X1p502BAkbVcWTsDeAFT9ov5vd7E44s"/>
+<div class="absolute inset-0 bg-primary/10 rounded-xl"></div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg dark:shadow-none">
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 hover:text-blue-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 hover:text-blue-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-lexend text-[10px] font-medium">Exams</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg px-3 py-1 active:scale-95 transition-all">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="font-lexend text-[10px] font-medium">Plans</span>
+</button>
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 hover:text-blue-500 active:scale-95 transition-all">
+<span class="material-symbols-outlined">person</span>
+<span class="font-lexend text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+</div>
+<!-- VIEW: odeme -->
+<div id="view-odeme" class="view" style="display:none;">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center px-6 py-3 w-full sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="school">school</span>
+<span class="font-lexend text-xl font-bold text-blue-700 dark:text-blue-400">EduAssess</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex gap-lg">
+<a class="text-slate-600 dark:text-slate-400 font-lexend text-base hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg" href="javascript:void(0)">Home</a>
+<a class="text-blue-700 dark:text-blue-400 font-semibold font-lexend text-base hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors px-3 py-1 rounded-lg" href="javascript:void(0)">Pro Plan</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User avatar" data-alt="professional male avatar with glasses and a clean academic appearance in a vector style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhVcMSEPND6EKQsFUY4UFTkZ2EKk6Mgg-hKG3zeGGx39mbPY63D-O_35MixLThwbh5nBJJniD-Exsuo_CgcFZaeDHZcjRvce5sRLiVslc7HjGymAPpDYZIof5yKSXRIM6DsULqHljuWsImpYUm6h0umotbxR29ewcZ7CBRX8kGot8qPS6u07kAH9FgYpcCxxgGtN7RZo2TBjFZfuMw1OXURNLNntcJqw6zLjHLddF6ejFsKVmarHAznj-oA_nAj63D1mQv9NKb2Zc"/>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-7xl mx-auto w-full px-margin-mobile md:px-margin-desktop py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+<!-- Payment Form Section -->
+<div class="lg:col-span-7 space-y-lg">
+<div class="flex items-center gap-sm mb-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-h2 text-h2 text-on-background">Complete Purchase</h1>
+</div>
+<!-- Payment Card -->
+<section class="bg-white border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-h3 text-h3 text-on-background">Payment Details</h3>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-slate-400" data-icon="credit_card">credit_card</span>
+<span class="material-symbols-outlined text-slate-400" data-icon="payments">payments</span>
+</div>
+</div>
+<form class="space-y-lg">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Cardholder Name</label>
+<input class="w-full h-12 px-md border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="e.g. Dr. Jane Smith" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Card Number</label>
+<div class="relative">
+<input class="w-full h-12 pl-md pr-12 border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="0000 0000 0000 0000" type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">Expiry Date</label>
+<input class="w-full h-12 px-md border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="MM / YY" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant block">CVV</label>
+<div class="relative">
+<input class="w-full h-12 px-md border border-outline rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="***" type="password"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant cursor-help" data-icon="help_outline">help_outline</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-sm p-md bg-surface-container-low rounded-lg border border-outline-variant">
+<input class="mt-1 rounded text-primary focus:ring-primary" id="save-card" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="save-card">Save card details for faster checkout in future academic cycles. Your data is encrypted and stored according to industry standards.</label>
+</div>
+<button class="w-full h-[48px] bg-primary text-on-primary rounded-xl font-label-md hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-sm"><span class="material-symbols-outlined" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span> Pay ₺20.00 Securely</button>
+</form>
+</section>
+<!-- Security Badges -->
+<div class="flex flex-wrap items-center justify-center gap-lg py-md">
+<div class="flex items-center gap-xs text-secondary font-label-sm">
+<span class="material-symbols-outlined" data-icon="shield_check" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span>Safe Payment Certified</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined" data-icon="enhanced_encryption" style="font-variation-settings: 'FILL' 1;">enhanced_encryption</span>
+<span>256-bit SSL Encryption</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined" data-icon="assured_workload" style="font-variation-settings: 'FILL' 1;">assured_workload</span>
+<span>Academic Privacy Standards</span>
+</div>
+</div>
+</div>
+<!-- Order Summary Section -->
+<div class="lg:col-span-5 space-y-lg">
+<section class="bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg bg-primary-container text-on-primary-container">
+<h3 class="font-label-md text-label-md uppercase tracking-wider mb-xs">Order Summary</h3>
+<div class="flex items-end gap-xs"><span class="font-h2 text-h2">₺20.00</span><span class="font-body-sm mb-2">/ monthly</span></div>
+</div>
+<div class="p-lg space-y-md">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-label-md text-on-surface">Pro Educator Plan</p>
+<p class="font-body-sm text-on-surface-variant">Monthly subscription</p>
+</div>
+<span class="font-label-md text-on-surface">₺20.00</span>
+</div>
+<div class="pt-md border-t border-outline-variant space-y-sm">
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>₺20.00</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface-variant">
+<span>Tax (Estimated)</span>
+<span>$0.00</span>
+</div>
+<div class="flex justify-between pt-sm font-h3 text-on-surface">
+<span>Total Due</span>
+<span>₺20.00</span>
+</div>
+</div>
+</div>
+<div class="px-lg pb-lg">
+<div class="bg-white rounded-lg p-md border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<div class="text-left">
+<p class="font-label-md text-on-surface">Applying 'PRO2024'</p>
+<p class="font-body-sm text-on-surface-variant">Best value applied!</p>
+</div>
+</div>
+<button class="text-error font-label-md">Remove</button>
+</div>
+</div>
+</section>
+<!-- Plan Highlights Bento -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-white border border-outline-variant p-md rounded-xl space-y-xs">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+<p class="font-label-sm text-on-surface">Advanced Analytics</p>
+</div>
+<div class="bg-white border border-outline-variant p-md rounded-xl space-y-xs">
+<span class="material-symbols-outlined text-primary" data-icon="group_add">group_add</span>
+<p class="font-label-sm text-on-surface">500+ Students</p>
+</div>
+<div class="bg-white border border-outline-variant p-md rounded-xl space-y-xs">
+<span class="material-symbols-outlined text-primary" data-icon="cloud_done">cloud_done</span>
+<p class="font-label-sm text-on-surface">Unlimited Storage</p>
+</div>
+<div class="bg-white border border-outline-variant p-md rounded-xl space-y-xs">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+<p class="font-label-sm text-on-surface">Priority Support</p>
+</div>
+</div>
+<div class="p-lg bg-surface-container rounded-xl">
+<p class="font-body-sm text-on-surface-variant italic">"EduAssess has completely transformed how I handle grading. The Pro features are a game-changer for my curriculum management."</p>
+<div class="mt-md flex items-center gap-sm">
+<img alt="Testimonial avatar" class="w-8 h-8 rounded-full" data-alt="friendly female educator avatar with a professional and welcoming look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWJGfymXETZpEd-N9H1sBqpS32mfD588qyGeF7QtUJZCzo8GPcZ3ny7guBAjiAFGrQ3eUElSHUmmc56SeRAlIOvTtGFCGVsfwo0wRleCrxaMEYvplxfcb0ntDmcfQmbKrKZa2BtiAVtKPOaphIujjOIIAQyY6LtTdPYqVhKW9-11xTXvb9mbAQi3BMmPZmi2a3TRzuqZ6PtS8OOgNPDznS9QZ-j12GsKIwhAsn0I8ccun8X5geSkaHl8Nkl7QigGe26gXnKJgQgLs"/>
+<p class="font-label-sm text-on-surface">— Prof. Sarah Jenkins</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Spacer for BottomNavBar -->
+<div class="h-16 md:hidden"></div>
+<!-- BottomNavBar (Only shown on mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_20px_0_rgba(0,82,204,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-600 dark:hover:text-blue-300 duration-150 ease-in-out" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-lexend text-[10px] font-medium">Workspace</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-4 py-1 hover:text-blue-600 dark:hover:text-blue-300 duration-150 ease-in-out" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="font-lexend text-[10px] font-medium">Preview</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-xl px-4 py-1 scale-95" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-lexend text-[10px] font-medium">Finish Exam</span>
+</a>
+</nav>
+</div>
+<!-- VIEW: adminSoru -->
+<div id="view-adminSoru" class="view" style="display:none;">
+<!-- NavigationDrawer (Shared Component) -->
+<aside class="hidden lg:flex flex-col p-4 gap-2 h-screen w-64 border-r border-slate-200 bg-slate-50">
+<div class="text-2xl font-black text-blue-700 mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" data-icon="school">school</span>
+            EduAssess Pro
+        </div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-blue-700 font-semibold rounded-md transition-all duration-200 ease-in-out" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-light">Soru Bankası</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-light">Sınavlar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="Rule">rule</span>
+<span class="font-light">Rubriklerim</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-light">Analiz</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-bold">
+                    EA
+                </div>
+<div>
+<p class="text-label-md font-bold text-on-surface">Eğitmen Paneli</p>
+<p class="text-[10px] text-outline">v2.4.0 Aktif</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center px-6 h-16 w-full max-w-full bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-slate-500 hover:bg-slate-50 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Lexend'] font-semibold text-lg text-on-surface">Soru Oluşturucu</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-sm text-outline hidden md:block">Taslak olarak kaydedildi: 14:02</span>
+<button class="px-6 py-2 bg-primary text-white font-['Lexend'] font-semibold text-label-md rounded-md active:scale-95 transition-transform">
+                    Kaydet
+                </button>
+</div>
+</header>
+<!-- Scrollable Workspace -->
+<div class="flex-1 overflow-y-auto custom-scrollbar bg-surface-container-lowest pb-24 lg:pb-12">
+<div class="max-w-4xl mx-auto p-gutter lg:p-margin">
+<!-- Page Title -->
+<div class="mb-8">
+<h2 class="font-h2 text-h2 text-on-surface mb-2">Yeni Soru Ekle</h2>
+<p class="text-body-md text-outline">Akademik standartlara uygun, rubrik tabanlı soru girişi.</p>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Question Content Section -->
+<div class="bg-white border border-slate-200 rounded-xl p-6 transition-all hover:border-primary-container/30">
+<div class="flex items-center gap-2 mb-6 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="edit_document">edit_document</span>
+<span class="text-label-md uppercase tracking-wider">Soru İçeriği</span>
+</div>
+<!-- Header Inputs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface">Ders Adı</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-low border border-slate-200 rounded-lg px-4 focus:border-primary focus:ring-0 appearance-none text-body-md transition-colors">
+<option>Türkçe</option>
+<option>Matematik</option>
+<option>Fen Bilimleri</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface">Kazanım Kodu</label>
+<input class="w-full h-12 bg-surface-container-low border border-slate-200 rounded-lg px-4 focus:border-primary focus:ring-0 text-body-md placeholder:text-outline/50 transition-colors" placeholder="Örn: T.5.3.14" type="text"/>
+</div>
+</div>
+<!-- Question Text Editor -->
+<div class="flex flex-col gap-2 mb-8">
+<label class="font-label-md text-on-surface">Soru Metni</label>
+<div class="border border-slate-200 rounded-lg overflow-hidden focus-within:border-primary transition-colors">
+<div class="flex items-center gap-1 p-2 bg-surface-container border-b border-slate-200 flex-wrap">
+<button class="p-1.5 hover:bg-white rounded transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="format_bold">format_bold</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="format_italic">format_italic</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="format_list_bulleted">format_list_bulleted</span></button>
+<div class="w-px h-6 bg-slate-300 mx-1"></div>
+<button class="p-1.5 hover:bg-white rounded transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="image">image</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="functions">functions</span></button>
+<button class="p-1.5 hover:bg-white rounded transition-colors"><span class="material-symbols-outlined text-[20px]" data-icon="table_chart">table_chart</span></button>
+</div>
+<textarea class="w-full p-4 border-none focus:ring-0 text-body-md resize-none min-h-[250px]" placeholder="Sorunuzu buraya yazın..." rows="8"></textarea>
+</div>
+</div>
+<!-- Rubric Section Moved Immediately Below Editor -->
+<div class="border-t border-slate-100 pt-8">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="rule">rule</span>
+<span class="text-label-md uppercase tracking-wider">Rubrik</span>
+</div>
+<div class="bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+<span class="text-label-sm text-blue-700">Toplam: <span class="font-bold">25 / 100</span></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Rubric Card 1 -->
+<div class="group border border-slate-100 bg-slate-50/50 rounded-lg p-4 transition-all hover:bg-white hover:border-blue-200 hover:shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-on-surface text-body-md">Dil Bilgisi</h4>
+<span class="bg-white px-2 py-0.5 rounded text-[12px] font-bold text-blue-600 border border-blue-100">10 PT</span>
+</div>
+<p class="text-[13px] text-outline leading-relaxed">Yazım ve imla kurallarına uygunluk, kelime çeşitliliği ve doğru kullanımı.</p>
+<div class="flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-[11px] text-blue-600 font-bold hover:underline">Düzenle</button>
+<button class="text-[11px] text-error font-bold hover:underline">Sil</button>
+</div>
+</div>
+<!-- Rubric Card 2 -->
+<div class="group border border-slate-100 bg-slate-50/50 rounded-lg p-4 transition-all hover:bg-white hover:border-blue-200 hover:shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-on-surface text-body-md">Mantıksal Akış</h4>
+<span class="bg-white px-2 py-0.5 rounded text-[12px] font-bold text-blue-600 border border-blue-100">15 PT</span>
+</div>
+<p class="text-[13px] text-outline leading-relaxed">Cümleler arası bağlantıların tutarlılığı ve giriş-gelişme-sonuç dengesi.</p>
+<div class="flex gap-2 mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-[11px] text-blue-600 font-bold hover:underline">Düzenle</button>
+<button class="text-[11px] text-error font-bold hover:underline">Sil</button>
+</div>
+</div>
+<!-- Add New Button -->
+<button class="md:col-span-2 py-4 border-2 border-dashed border-slate-200 rounded-lg flex items-center justify-center gap-2 text-outline hover:border-primary-container hover:text-primary-container hover:bg-blue-50/30 transition-all group">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform" data-icon="add_circle">add_circle</span>
+<span class="text-label-md font-bold">Yeni Kriter Ekle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Page Actions -->
+<div class="flex flex-col gap-3 mt-4">
+<button class="w-full py-4 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined" data-icon="save" style="font-variation-settings: 'FILL' 1;">save</span>
+                            Soruyu Kaydet
+                        </button>
+<p class="text-[11px] text-center text-outline">Tüm kazanımlar ve rubrikler kontrol edildi.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Shared Component - Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-white/80 backdrop-blur-md border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,82,204,0.05)]">
+<a class="flex flex-col items-center justify-center text-blue-700 bg-blue-50/50 rounded-xl px-4 py-1 active:scale-90 transition-transform" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Düzenle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Önizle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="table_chart">table_chart</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Rubrik</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform" href="javascript:void(0)">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Lexend'] text-[10px] font-medium">Ayarlar</span>
+</a>
+</nav>
+</main>
+</div>
+
+<div id="olcum-sandbox" style="position:absolute;top:-9999px;left:-9999px;width:170mm;visibility:hidden;pointer-events:none;"></div>
+
+<script>
+
+// ── Demo soru seed (ilk açılışta localStorage boşsa yükle) ──
+(function seedDemoSorular() {
+  if (DB.get('sorular') && DB.get('sorular').length > 0) return;
+  var demo = [
+    { id:'q1', tip:'çoktan_seçmeli', puan:10, kazanim:'M.9.1.1.1', senaryoId:'s1',
+      metin:'Aşağıdakilerden hangisi bir önerme belirtir?',
+      secenekler:['Okula gittin mi?','Bugün hava çok güzel.','En küçük asal sayı 2\'dir.','Keşke kar yağsa.','Hemen eve gel!'],
+      gorsel:null, cevapY:0 },
+    { id:'q2', tip:'açık_uçlu', puan:15, kazanim:'M.9.1.2.1', senaryoId:'s1',
+      metin:'p ≡ 1 ve q ≡ 0 olduğuna göre (p ∧ q\') ∨ (p\' ∧ q) bileşik önermesinin doğruluk değerini işlem basamaklarını göstererek bulunuz.',
+      secenekler:null, gorsel:null, cevapY:100 },
+    { id:'q3', tip:'çoktan_seçmeli', puan:10, kazanim:'M.9.2.1.1', senaryoId:'s1',
+      metin:'A = {x | x < 10, x asal sayı} kümesinin eleman sayısı kaçtır?',
+      secenekler:['3','4','5','6','7'],
+      gorsel:null, cevapY:0 },
+    { id:'q4', tip:'çoktan_seçmeli', puan:10, kazanim:'M.9.1.1.1', senaryoId:'s1',
+      metin:'p ve q iki önerme olmak üzere, (p ∧ q\')\' ∨ p bileşik önermesinin en sade biçimi aşağıdakilerden hangisidir?',
+      secenekler:['p','q','1','0','p\''],
+      gorsel:null, cevapY:0 },
+    { id:'q5', tip:'açık_uçlu', puan:20, kazanim:'M.9.2.2.1', senaryoId:'s1',
+      metin:'A = {1, 2, 3, 4} ve B = {2, 4, 6} kümeleri verildiğine göre A ∩ B, A ∪ B ve A \\ B kümelerini bulunuz.',
+      secenekler:null, gorsel:null, cevapY:120 },
+    { id:'q6', tip:'çoktan_seçmeli', puan:10, kazanim:'M.9.2.1.1', senaryoId:'s1',
+      metin:'İki basamaklı en büyük negatif tam sayı ile üç basamaklı en küçük pozitif tam sayının toplamı kaçtır?',
+      secenekler:['89','91','-89','-91','0'],
+      gorsel:null, cevapY:0 },
+  ];
+  DB.set('sorular', demo);
+})();
+
+// ═══════════════════════════════════════════════════════
+//  KOLAY YAZILI HAZIRLA — ORTAK UYGULAMA KATMANI
+//  Bu dosya tüm ekranlar tarafından yüklenir.
+// ═══════════════════════════════════════════════════════
+
+// ── Sayfa yolları ──
+// ── Navigasyon yardımcısı ──
+function git(sayfa, params) {
+  if (params) {
+    const q = new URLSearchParams(params).toString();
+    window.location.href = sayfa + '?' + q;
+  } else {
+    window.location.href = sayfa;
+  }
+}
+
+// ── localStorage CRUD ──
+var DB = {
+  get(key)        { try { return JSON.parse(localStorage.getItem('kyw_' + key) || 'null'); } catch { return null; } },
+  set(key, val)   { try { localStorage.setItem('kyw_' + key, JSON.stringify(val)); } catch { alert('Depolama doldu.'); } },
+  del(key)        { localStorage.removeItem('kyw_' + key); },
+};
+
+// ── Sorular (admin tarafından eklenir, localStorage'da saklanır) ──
+var SoruDB = {
+  hepsiniGetir()        { return DB.get('sorular') || []; },
+  kaydet(sorular)       { DB.set('sorular', sorular); },
+  ekle(soru)            { const s = SoruDB.hepsiniGetir(); s.push(soru); SoruDB.kaydet(s); },
+  guncelle(id, soru)    { const s = SoruDB.hepsiniGetir(); const i = s.findIndex(x => x.id === id); if (i !== -1) s[i] = soru; SoruDB.kaydet(s); },
+  sil(id)               { SoruDB.kaydet(SoruDB.hepsiniGetir().filter(s => s.id !== id)); },
+  senaryoyaGore(senId)  { return SoruDB.hepsiniGetir().filter(s => s.senaryoId === senId); },
+};
+
+// ── Senaryolar ──
+var SenarDB = {
+  hepsiniGetir() {
+    const kayitli = DB.get('senaryolar');
+    if (kayitli && kayitli.length) return kayitli;
+    // Varsayılan demo senaryolar
+    return [
+      { id: 's1', baslik: 'Senaryo 1', ders: 'Matematik', sinif: '9', donem: '1', yaziliNo: '2', zorluk: 'Temel', kazanimSayisi: 4, hedefSoru: 10,
+        kazanimlar: [
+          { kod: 'M.9.1.1.1', aciklama: 'Önermeyi, önermenin doğruluk değerini açıklar.', hedef: 2 },
+          { kod: 'M.9.1.2.1', aciklama: 'Bileşik önermeyi örneklerle açıklar.', hedef: 3 },
+          { kod: 'M.9.2.1.1', aciklama: 'Kümeler ile ilgili temel kavramları açıklar.', hedef: 3 },
+          { kod: 'M.9.2.2.1', aciklama: 'Alt kümeyi kullanarak işlemler yapar.', hedef: 2 },
+        ]
+      },
+      { id: 's2', baslik: 'Senaryo 2', ders: 'Matematik', sinif: '9', donem: '1', yaziliNo: '2', zorluk: 'Orta', kazanimSayisi: 5, hedefSoru: 8,
+        kazanimlar: [
+          { kod: 'M.9.2.1.1', aciklama: 'Kümeler ile ilgili temel kavramları açıklar.', hedef: 2 },
+          { kod: 'M.9.2.2.1', aciklama: 'Alt kümeyi kullanarak işlemler yapar.', hedef: 2 },
+          { kod: 'M.9.3.1.1', aciklama: 'Gerçek sayıları tanır ve sayı doğrusunda gösterir.', hedef: 2 },
+          { kod: 'M.9.3.2.1', aciklama: 'Üslü sayılarla işlem yapar.', hedef: 1 },
+          { kod: 'M.9.3.3.1', aciklama: 'Köklü ifadelerle işlem yapar.', hedef: 1 },
+        ]
+      },
+      { id: 's3', baslik: 'Senaryo 3', ders: 'Matematik', sinif: '9', donem: '1', yaziliNo: '2', zorluk: 'İleri', kazanimSayisi: 6, hedefSoru: 6,
+        kazanimlar: [
+          { kod: 'M.9.3.1.1', aciklama: 'Gerçek sayıları tanır ve sayı doğrusunda gösterir.', hedef: 1 },
+          { kod: 'M.9.3.2.1', aciklama: 'Üslü sayılarla işlem yapar.', hedef: 1 },
+          { kod: 'M.9.3.3.1', aciklama: 'Köklü ifadelerle işlem yapar.', hedef: 1 },
+          { kod: 'M.9.4.1.1', aciklama: 'Birinci dereceden denklem ve eşitsizlikleri çözer.', hedef: 2 },
+          { kod: 'M.9.4.2.1', aciklama: 'Mutlak değer içeren denklemleri çözer.', hedef: 1 },
+        ]
+      },
+    ];
+  },
+  getir(id) { return SenarDB.hepsiniGetir().find(s => s.id === id); },
+};
+
+// ── Aktif sınav oturumu ──
+var Sinav = {
+  oturumGetir()  { return DB.get('aktif_sinav') || { senaryoId: null, secilenSorular: [], okulAdi: '', dersAdi: '', donem: '', yaziliNo: '', senaryo: '', egitimYili: '2024-2025 Eğitim-Öğretim Yılı' }; },
+  oturumKaydet(o){ DB.set('aktif_sinav', o); },
+  sifirla()      { DB.del('aktif_sinav'); },
+  soruEkle(id) {
+    const o = Sinav.oturumGetir();
+    if (!o.secilenSorular.includes(id)) o.secilenSorular.push(id);
+    Sinav.oturumKaydet(o);
+  },
+  soruCikar(id) {
+    const o = Sinav.oturumGetir();
+    o.secilenSorular = o.secilenSorular.filter(x => x !== id);
+    Sinav.oturumKaydet(o);
+  },
+  seciliMi(id) { return Sinav.oturumGetir().secilenSorular.includes(id); },
+  secilenSorular() {
+    const o = Sinav.oturumGetir();
+    return SoruDB.hepsiniGetir().filter(s => o.secilenSorular.includes(s.id));
+  },
+};
+
+// ── HTML escape ──
+function e(str) {
+  return String(str || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;');
+}
+
+// ── URL parametresi oku ──
+function urlParam(key) {
+  return new URLSearchParams(window.location.search).get(key);
+}
+
+// ═══════════════════════════════════════════════════════
+//  DİZGİ MOTORU  (sinav_olusturucu.html'den alındı)
+// ═══════════════════════════════════════════════════════
+
+const A4_ICERIK_PX  = Math.round(251 * 3.7795); // ~949px
+const ILK_REZERV    = 110; // başlık (~40px) + öğrenci bilgi (~20px) + hr + boşluklar
+
+function yaziliRender(containerEl, sorular, sinav) {
+  containerEl.innerHTML = '';
+
+  const sandbox = document.getElementById('olcum-sandbox');
+  if (!sandbox) return;
+
+  const yukseklikler = sorular.map(s => {
+    sandbox.innerHTML = soruBlogHTML(s, 0);
+    const h = sandbox.firstElementChild?.getBoundingClientRect().height || 100;
+    sandbox.innerHTML = '';
+    return h + 14;
+  });
+
+  // Sayfalara böl
+  const sayfalar = [];
+  let grup = [], topY = ILK_REZERV;
+  sorular.forEach((s, i) => {
+    const h = yukseklikler[i];
+    if (grup.length > 0 && topY + h > A4_ICERIK_PX) {
+      sayfalar.push([...grup]); grup = []; topY = 0;
+    }
+    grup.push(s); topY += h;
+  });
+  if (grup.length) sayfalar.push(grup);
+
+  let soruNo = 1;
+  sayfalar.forEach((grup, si) => {
+    const sayfa = document.createElement('div');
+    sayfa.className = 'a4-sayfa';
+    let html = '';
+    if (si === 0) html += baslikHTML(sinav) + bilgiAlaniHTML();
+    html += grup.map(s => soruBlogHTML(s, soruNo++)).join('');
+    html += sayfaAltHTML(si + 1, sayfalar.length);
+    if (si === sayfalar.length - 1) html += imzaHTML();
+    sayfa.innerHTML = html;
+    containerEl.appendChild(sayfa);
+  });
+}
+
+function soruBlogHTML(s, no) {
+  const gorselHtml = s.gorsel ? `<img src="${s.gorsel}" style="display:block;max-width:100%;max-height:150px;object-fit:contain;margin:5px 0"/>` : '';
+
+  let icerik = '';
+  if (s.tip === 'çoktan_seçmeli' && s.secenekler?.length) {
+    const harfler = 'ABCDE';
+    const eksiMi = sc => /^[\-−]/.test(String(sc).trimStart());
+    const sol = s.secenekler.slice(0, 2), sag = s.secenekler.slice(2, 4);
+    const solE = sol.some(eksiMi), sagE = sag.some(eksiMi);
+    const span = (sc, ke) => {
+      const pad = (ke && !eksiMi(sc)) ? ' style="padding-left:0.55em"' : '';
+      return `<span class="sec-metin"${pad}>${e(sc)}</span>`;
+    };
+    const ilkDort = [
+      [s.secenekler[0],0,solE],[s.secenekler[1],1,solE],
+      [s.secenekler[2],2,sagE],[s.secenekler[3],3,sagE],
+    ].map(([sc,si,ek]) => `<div class="sec-satir"><span class="sec-harf">${harfler[si]}</span>${span(sc,ek)}</div>`).join('');
+    let besinci = '';
+    if (s.secenekler.length === 5) {
+      besinci = `<div style="display:flex;justify-content:center;margin-top:2px"><div class="sec-satir" style="min-width:45%;max-width:60%"><span class="sec-harf">E</span><span class="sec-metin">${e(s.secenekler[4])}</span></div></div>`;
+    }
+    icerik = `<div class="sec-grid">${ilkDort}</div>${besinci}`;
+  } else if (s.tip === 'açık_uçlu') {
+    icerik = `<div style="border-bottom:1px dotted #999;height:${s.cevapY || 80}px;margin-top:5px"></div>`;
+  } else if (s.tip === 'boşluk') {
+    icerik = `<div style="border-bottom:1px dotted #999;height:28px;margin-top:5px"></div>`;
+  }
+
+  return `<div class="soru-blok">
+    <div class="soru-ust">
+      <span class="soru-no-lbl">${no > 0 ? no + '.' : ''}</span>
+      <span class="soru-metin-lbl">${e(s.metin)}</span>
+      <span class="soru-puan-lbl">${no > 0 ? '(' + s.puan + ' puan)' : ''}</span>
+    </div>
+    ${gorselHtml}${icerik}
+  </div>`;
+}
+
+function baslikHTML(sinav) {
+  // Tek satıra sığdır: yıl + okul üstte, ders bilgisi altta
+  return `<div class="sinav-baslik">${e(sinav.egitimYili)} — ${e(sinav.okulAdi)}<br/>${e(sinav.dersAdi)} Dersi ${e(sinav.donem)} ${e(sinav.yaziliNo)} (${e(sinav.senaryo)})</div>`;
+}
+
+function bilgiAlaniHTML() {
+  // 4 alan tek satırda yan yana — çok daha kompakt
+  const alanlar = [
+    { etiket:'Adı Soyadı', renk:'#2563eb', genislik:'30%' },
+    { etiket:'Sınıf',      renk:'#d97706', genislik:'15%' },
+    { etiket:'No',         renk:'#0891b2', genislik:'20%' },
+    { etiket:'Puan',       renk:'#7c3aed', genislik:'15%' },
+  ];
+  const satirlar = alanlar.map(a =>
+    `<div style="display:flex;border:1px solid #bbb;height:20px;overflow:hidden;border-radius:2px;flex:1">` +
+    `<div style="background:${a.renk};color:white;font-size:7.5pt;font-weight:700;padding:0 5px;display:flex;align-items:center;white-space:nowrap">${a.etiket}:</div>` +
+    `<div style="flex:1;background:white"></div></div>`
+  ).join('');
+  return `<div style="display:flex;gap:3px;margin-bottom:6px;margin-top:4px">${satirlar}</div><hr style="border:none;border-top:1px solid #ccc;margin:0 0 7px 0"/>`;
+}
+
+function sayfaAltHTML(no, toplam) {
+  return `<div style="position:absolute;bottom:8mm;left:18mm;right:18mm;display:flex;justify-content:space-between;font-size:7.5pt;color:#999;border-top:1px solid #e2e8f0;padding-top:3px"><span>T.C. MİLLİ EĞİTİM BAKANLIĞI</span><span>SAYFA ${no} / ${toplam}</span></div>`;
+}
+
+function imzaHTML() {
+  return `<div style="display:flex;justify-content:flex-end;margin-top:20px"><div style="text-align:center"><div style="font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:.05em">Ders Öğretmeni</div><div style="border-top:1px solid #333;width:130px;padding-top:3px;margin-top:36px;font-size:8.5pt;color:#666;font-style:italic">İmza / Kaşe</div></div></div>`;
+}
+
+// A4 CSS (onizleme.html içinde inject edilir)
+const A4_CSS = `
+  .a4-sayfa { width:210mm; min-height:297mm; padding:12mm 18mm 24mm 18mm; background:white; box-shadow:0 4px 24px rgba(0,0,0,.15); margin:0 auto 24px auto; position:relative; font-family:'Times New Roman',Times,serif; font-size:11pt; line-height:1.55; color:#111; box-sizing:border-box; }
+  @media(max-width:900px){ .a4-sayfa{ width:100%; padding:6mm 5mm; font-size:9pt; } }
+  @media print { body *{ visibility:hidden; } #print-area,#print-area *{ visibility:visible; } #print-area{ position:fixed; top:0; left:0; width:100%; } .a4-sayfa{ box-shadow:none; margin:0; page-break-after:always; } .no-print{ display:none !important; } @page{ size:A4; margin:0; } }
+  .sinav-baslik { border:2px solid #c00; padding:3px 8px; text-align:center; font-weight:700; font-size:10pt; line-height:1.35; margin-bottom:6px; }
+  .soru-blok { margin-bottom:12px; page-break-inside:avoid; break-inside:avoid; }
+  .soru-ust { display:flex; align-items:baseline; gap:5px; border-bottom:1px solid #e2e8f0; padding-bottom:2px; margin-bottom:4px; }
+  .soru-no-lbl { font-weight:700; color:#c00; white-space:nowrap; font-size:11pt; }
+  .soru-metin-lbl { font-weight:700; flex:1; white-space:pre-wrap; word-break:break-word; }
+  .soru-puan-lbl { font-size:8pt; color:#666; white-space:nowrap; }
+  .sec-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px 14px; margin-top:5px; padding-left:2px; }
+  .sec-satir { display:grid; grid-template-columns:20px 1fr; align-items:start; gap:5px; font-size:10.5pt; line-height:1.4; }
+  .sec-harf { width:17px; height:17px; border:1.5px solid #333; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:8pt; font-weight:700; flex-shrink:0; margin-top:2px; }
+  .sec-metin { font-variant-numeric:tabular-nums; word-break:break-word; white-space:pre-wrap; }
+`;
+
+
+var PAGES = {giris:'giris.html',anaSayfa:'ana-sayfa.html',senaryo:'senaryo-secimi.html',sorular:'soru-secimi.html',dizgi:'sinav-hazirlama.html',onizleme:'onizleme.html',uyelik:'uyelik.html',odeme:'odeme.html',admin:'admin.html',adminSoru:'admin-soru.html'};
+var VIEWS = {};
+var _VMAP = {'giris.html':'giris','ana-sayfa.html':'anaSayfa','senaryo-secimi.html':'senaryo','soru-secimi.html':'sorular','sinav-hazirlama.html':'dizgi','onizleme.html':'onizleme','uyelik.html':'uyelik','odeme.html':'odeme','admin.html':'admin','admin-soru.html':'adminSoru'};
+
+function git(s,p){
+  if(p) Object.keys(p).forEach(function(k){sessionStorage.setItem('param_'+k,p[k]);});
+  goster(_VMAP[s]||s.replace('.html',''));
+}
+function urlParam(k){return sessionStorage.getItem('param_'+k);}
+
+function goster(vid){
+  document.querySelectorAll('div[id^="view-"]').forEach(function(v){
+    v.style.display = 'none';
+  });
+  var el = document.getElementById('view-' + vid);
+  if(el){
+    el.style.display = 'block';
+    el.style.minHeight = '100vh';
+    window.scrollTo(0,0);
+    var fn = window['init_' + vid.replace(/-/g,'_')];
+    if(typeof fn === 'function') fn();
+  }
+}
+
+function _toggleAvatarMenu(){
+  var dd=document.getElementById('avatar-dropdown');
+  if(!dd)return;
+  dd.style.display=dd.style.display==='none'?'block':'none';
+}
+function _cikisYap(){goster('giris');}
+
+function init_giris(){var h=document.getElementById('global-header');var s=document.getElementById('global-header-spacer');if(h)h.style.display='none';if(s)s.style.display='none';}
+function init_anaSayfa(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_senaryo(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_sorular(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_dizgi(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_onizleme(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_uyelik(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_odeme(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_adminSoru(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+function init_admin(){var h=document.getElementById('global-header');if(h)h.style.display='flex';}
+
+document.addEventListener('DOMContentLoaded', function(){ goster('anaSayfa'); });
+
+
+
+
+</script>
+</body>
+</html>
