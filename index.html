@@ -247,8 +247,8 @@
 <div class="hidden md:flex items-center gap-6">
 <nav class="flex gap-4">
 <a class="text-blue-700 dark:text-blue-400 font-bold font-lexend text-base" href="javascript:void(0)">Home</a>
-<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-1 px-2 rounded-lg" href="javascript:void(0)" onclick="goster('senaryo')">Scenarios</a>
-<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-1 px-2 rounded-lg" href="javascript:void(0)" onclick="goster('senaryo')">Library</a>
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-1 px-2 rounded-lg" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">Scenarios</a>
+<a class="text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 p-1 px-2 rounded-lg" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">Library</a>
 </nav>
 <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
 <span class="material-symbols-outlined text-on-surface" data-icon="person">person</span>
@@ -279,7 +279,7 @@
 <h2 class="font-h2 text-h2 mb-lg">Hızlı İşlemler</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Primary Action -->
-<a class="md:col-span-2 bg-primary text-on-primary p-lg rounded-xl flex flex-col justify-between min-h-[240px] shadow-lg hover:brightness-110 transition-all cursor-pointer relative overflow-hidden" href="javascript:void(0)" onclick="goster('senaryo')">
+<a class="md:col-span-2 bg-primary text-on-primary p-lg rounded-xl flex flex-col justify-between min-h-[240px] shadow-lg hover:brightness-110 transition-all cursor-pointer relative overflow-hidden" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">
 <div class="relative z-10">
 <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-md">
 <span class="material-symbols-outlined text-white" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
@@ -298,7 +298,7 @@
 </a>
 <div class="flex flex-col gap-gutter">
 <!-- Secondary Action 1 -->
-<a class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-all cursor-pointer flex items-center gap-md" href="javascript:void(0)" onclick="goster('senaryo')">
+<a class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-all cursor-pointer flex items-center gap-md" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">
 <div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined" data-icon="database">database</span>
 </div>
@@ -308,7 +308,7 @@
 </div>
 </a>
 <!-- Secondary Action 2 -->
-<a class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-all cursor-pointer flex items-center gap-md" href="javascript:void(0)" onclick="goster('adminSoru')">
+<a class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl hover:shadow-md transition-all cursor-pointer flex items-center gap-md" href="javascript:void(0)" onclick=\"window.goster&&window.goster('adminSoru')\">
 <div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg flex items-center justify-center shrink-0">
 <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
 </div>
@@ -330,7 +330,7 @@
 <p class="font-body-sm opacity-90">Sınırsız PDF dışa aktarma ve yapay zeka destekli soru üretimi özelliklerine sahipsiniz.</p>
 </div>
 </div>
-<a class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-label-md px-lg py-sm rounded-lg transition-colors shrink-0" href="javascript:void(0)" onclick="goster('uyelik')">
+<a class="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-label-md px-lg py-sm rounded-lg transition-colors shrink-0" href="javascript:void(0)" onclick=\"window.goster&&window.goster('uyelik')\">
                     Planı Yönet
                 </a>
 </div>
@@ -391,7 +391,7 @@
 </div>
 </div>
 <!-- Empty state placeholder or third card -->
-<a class="bg-surface-container-low border-2 border-dashed border-outline-variant rounded-xl p-md flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity" href="javascript:void(0)" onclick="goster('senaryo')">
+<a class="bg-surface-container-low border-2 border-dashed border-outline-variant rounded-xl p-md flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">
 <span class="material-symbols-outlined text-4xl mb-base" data-icon="post_add">post_add</span>
 <p class="font-label-md">Yeni bir sınav oluşturmak için tıklayın</p>
 </a>
@@ -399,7 +399,7 @@
 </section>
 </main>
 <!-- Floating Action Button -->
-<a class="fixed bottom-24 right-6 md:right-12 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40" href="javascript:void(0)" onclick="goster('senaryo')">
+<a class="fixed bottom-24 right-6 md:right-12 w-14 h-14 bg-primary text-on-primary rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">
 <span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
 </a>
 <!-- BottomNavBar (Mobile Only) -->
@@ -408,19 +408,19 @@
 <span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
 <span class="font-lexend text-[12px] font-medium">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('senaryo')">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">
 <span class="material-symbols-outlined" data-icon="psychology">psychology</span>
 <span class="font-lexend text-[12px] font-medium">Scenarios</span>
 </a>
-<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('senaryo')">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick=\"window.goster&&window.goster('senaryo')\">
 <span class="material-symbols-outlined" data-icon="library_books">library_books</span>
 <span class="font-lexend text-[12px] font-medium">Library</span>
 </a>
-<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('uyelik')">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick=\"window.goster&&window.goster('uyelik')\">
 <span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
 <span class="font-lexend text-[12px] font-medium">Plans</span>
 </a>
-<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick="goster('anaSayfa')">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 p-2 hover:text-blue-600 dark:hover:text-blue-300 active:scale-95 transition-transform duration-150" href="javascript:void(0)" onclick=\"window.goster&&window.goster('anaSayfa')\">
 <span class="material-symbols-outlined" data-icon="person">person</span>
 <span class="font-lexend text-[12px] font-medium">Profile</span>
 </a>
@@ -2154,6 +2154,34 @@
 
 <script>
 
+// Fonksiyonları global scope'a bağla - inline onclick'ler için
+window.goster = function(vid){
+  document.querySelectorAll('div[id^="view-"]').forEach(function(v){
+    v.style.display = 'none';
+  });
+  var el = document.getElementById('view-' + vid);
+  if(el){
+    el.style.display = 'block';
+    el.style.minHeight = '100vh';
+    window.scrollTo(0,0);
+    var fn = window['init_' + vid.replace(/-/g,'_')];
+    if(typeof fn === 'function') fn();
+  }
+};
+window.git = function(s,p){
+  if(!s) return;
+  if(p) Object.keys(p).forEach(function(k){sessionStorage.setItem('param_'+k,p[k]);});
+  var map = {'giris.html':'giris','ana-sayfa.html':'anaSayfa','senaryo-secimi.html':'senaryo','soru-secimi.html':'sorular','sinav-hazirlama.html':'dizgi','onizleme.html':'onizleme','uyelik.html':'uyelik','odeme.html':'odeme','admin.html':'admin','admin-soru.html':'adminSoru'};
+  window.goster(map[s]||s.replace('.html',''));
+};
+window._toggleAvatarMenu = function(){
+  var dd=document.getElementById('avatar-dropdown');
+  if(!dd)return;
+  dd.style.display=dd.style.display==='none'?'block':'none';
+};
+window._cikisYap = function(){ window.goster('giris'); };
+
+
 // ── Demo soru seed (ilk açılışta localStorage boşsa yükle) ──
 
 
@@ -2406,7 +2434,7 @@ function imzaHTML() {
 }
 
 // A4 CSS (onizleme.html içinde inject edilir)
-const A4_CSS = `
+var A4_CSS = `
   .a4-sayfa { width:210mm; min-height:297mm; padding:12mm 18mm 24mm 18mm; background:white; box-shadow:0 4px 24px rgba(0,0,0,.15); margin:0 auto 24px auto; position:relative; font-family:'Times New Roman',Times,serif; font-size:11pt; line-height:1.55; color:#111; box-sizing:border-box; }
   @media(max-width:900px){ .a4-sayfa{ width:100%; padding:6mm 5mm; font-size:9pt; } }
   @media print { body *{ visibility:hidden; } #print-area,#print-area *{ visibility:visible; } #print-area{ position:fixed; top:0; left:0; width:100%; } .a4-sayfa{ box-shadow:none; margin:0; page-break-after:always; } .no-print{ display:none !important; } @page{ size:A4; margin:0; } }
@@ -2554,6 +2582,22 @@ function _adminSifirla() {
   _adminOzetYukle();
 }
 
+
+document.addEventListener('DOMContentLoaded', function(){
+  // Global scope'a bağla
+  window.goster = goster;
+  window.git = git;
+  window._toggleAvatarMenu = _toggleAvatarMenu;
+  window._cikisYap = _cikisYap;
+  // Admin paneli başlat
+  window._adminTab = typeof _adminTab !== 'undefined' ? _adminTab : function(){};
+  window._adminSoruKaydet = typeof _adminSoruKaydet !== 'undefined' ? _adminSoruKaydet : function(){};
+  window._adminSoruSil = typeof _adminSoruSil !== 'undefined' ? _adminSoruSil : function(){};
+  window._adminSeedDemo = typeof _adminSeedDemo !== 'undefined' ? _adminSeedDemo : function(){};
+  window._adminSifirla = typeof _adminSifirla !== 'undefined' ? _adminSifirla : function(){};
+  // Ana sayfayı göster
+  goster('anaSayfa');
+});
 </script>
 </body>
 </html>
