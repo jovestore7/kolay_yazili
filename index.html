@@ -155,7 +155,7 @@
 
 
 <!-- VIEW: giris -->
-<div id="view-giris" class="view" style="display:none;">
+<div id="V-giris" class="view" style="display:none;">
 <div class="max-w-md w-full grid grid-cols-1 gap-8">
 <div class="flex flex-col items-center text-center space-y-4">
 <div class="flex items-center space-x-3 mb-2">
@@ -236,7 +236,7 @@
 </div>
 </div>
 <!-- VIEW: anaSayfa -->
-<div id="view-anaSayfa" class="view active" style="display:block;">
+<div id="V-anaSayfa" class="view active" style="display:block;">
 <!-- TopAppBar -->
 <header class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 docked full-width top-0 sticky z-50">
 <div class="flex justify-between items-center px-6 py-4 w-full">
@@ -427,7 +427,7 @@
 </nav>
 </div>
 <!-- VIEW: senaryo -->
-<div id="view-senaryo" class="view" style="display:none;">
+<div id="V-senaryo" class="view" style="display:none;">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 z-50 flex justify-between items-center px-4 h-16 w-full">
 <div class="flex items-center gap-3">
@@ -681,7 +681,7 @@
 </nav>
 </div>
 <!-- VIEW: sorular -->
-<div id="view-sorular" class="view" style="display:none;">
+<div id="V-sorular" class="view" style="display:none;">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 z-50 flex justify-between items-center px-4 h-16 w-full">
 <div class="flex items-center gap-3">
@@ -935,7 +935,7 @@
 <!-- Mobile Navigation Suppressed based on "Task-Focused" rule -->
 </div>
 <!-- VIEW: dizgi -->
-<div id="view-dizgi" class="view" style="display:none;">
+<div id="V-dizgi" class="view" style="display:none;">
 <!-- TopAppBar -->
 <header class="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 fixed top-0 w-full z-50 flex items-center justify-between px-4 h-16 w-full font-lexend antialiased">
 <div class="flex items-center gap-4">
@@ -1167,7 +1167,7 @@
 </button>
 </div>
 <!-- VIEW: onizleme -->
-<div id="view-onizleme" class="view" style="display:none;">
+<div id="V-onizleme" class="view" style="display:none;">
 <style>/* A4 aspect ratio and scaling for preview */
         .a4-wrapper {
             width: 100%;
@@ -1443,7 +1443,7 @@
 </button>
 </div>
 <!-- VIEW: uyelik -->
-<div id="view-uyelik" class="view" style="display:none;">
+<div id="V-uyelik" class="view" style="display:none;">
 <!-- TopAppBar -->
 <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
 <div class="flex items-center gap-4">
@@ -1614,7 +1614,7 @@
 </nav>
 </div>
 <!-- VIEW: odeme -->
-<div id="view-odeme" class="view" style="display:none;">
+<div id="V-odeme" class="view" style="display:none;">
 <!-- TopAppBar -->
 <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center px-6 py-3 w-full sticky top-0 z-50">
 <div class="flex items-center gap-md">
@@ -1791,7 +1791,7 @@
 </nav>
 </div>
 <!-- VIEW: adminSoru -->
-<div id="view-adminSoru" class="view" style="display:none;">
+<div id="V-adminSoru" class="view" style="display:none;">
 <!-- NavigationDrawer (Shared Component) -->
 <aside class="hidden lg:flex flex-col p-4 gap-2 h-screen w-64 border-r border-slate-200 bg-slate-50">
 <div class="text-2xl font-black text-blue-700 mb-8 flex items-center gap-2">
@@ -1976,7 +1976,7 @@
 </div>
 
 == -->
-<div id="view-admin" class="view">
+<div id="V-admin" class="view">
 <div style="display:flex;min-height:100vh;background:#0f172a;font-family:'Lexend',sans-serif;color:#e2e8f0;">
 
   <!-- Sidebar -->
@@ -2153,6 +2153,30 @@
 <div id="olcum-sandbox" style="position:absolute;top:-9999px;left:-9999px;width:170mm;visibility:hidden;pointer-events:none;"></div>
 
 <script>
+
+function G(vid) {
+  document.querySelectorAll('[id^="V-"]').forEach(function(el) {
+    el.style.display = 'none';
+  });
+  var el = document.getElementById('V-' + vid);
+  if (el) { el.style.display='block'; el.style.minHeight='100vh'; window.scrollTo(0,0); }
+  var fn = window['init_'+vid];
+  if (typeof fn==='function') fn();
+}
+function git(s,p) {
+  if(p) Object.keys(p).forEach(function(k){sessionStorage.setItem('p_'+k,p[k]);});
+  var m={'giris.html':'anaSayfa','ana-sayfa.html':'anaSayfa','senaryo-secimi.html':'senaryo',
+    'soru-secimi.html':'sorular','sinav-hazirlama.html':'dizgi','onizleme.html':'onizleme',
+    'uyelik.html':'uyelik','odeme.html':'odeme','admin.html':'admin','admin-soru.html':'adminSoru'};
+  G(m[s]||s.replace('.html',''));
+}
+function urlParam(k){return sessionStorage.getItem('p_'+k);}
+function _toggleAvatarMenu(){
+  var dd=document.getElementById('avatar-dropdown');
+  if(!dd)return;
+  dd.style.display=dd.style.display==='none'?'block':'none';
+}
+
 
 // Fonksiyonları global scope'a bağla - inline onclick'ler için
 window.goster = function(vid){
@@ -2598,6 +2622,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // Ana sayfayı göster
   goster('anaSayfa');
 });
+document.addEventListener('DOMContentLoaded',function(){G('anaSayfa');});
 </script>
 </body>
 </html>
